@@ -218,6 +218,10 @@ summary{cursor:pointer;list-style:none}summary::-webkit-details-marker{display:n
 .v-d #d-servicios li:has(+li+li:hover)>span:last-child{rotate:1.1deg;transition:rotate .75s cubic-bezier(.2,.7,.3,1) .18s}
 }
 *{font-variant-numeric: lining-nums}
+nav[aria-label="Ir a una sección"] a{transition:background .2s ease, transform .2s ease, box-shadow .2s ease}
+@media (hover: hover){nav[aria-label="Ir a una sección"] a:hover{background:#FFFFFF;transform:translateY(-2px);box-shadow:0 4px 0 #C1B6A9}}
+@media (max-width: 420px){nav[aria-label="Ir a una sección"] a span{font-size:10px !important;letter-spacing:0 !important}}
+nav[aria-label="Ir a una sección"] a:active{transform:translateY(2px);box-shadow:0 0 0 #C1B6A9}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
 [hidden]{display:none !important}
 a{color:#6E5A40}
