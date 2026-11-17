@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+node_modules/
+.vercel/
+.env
+.env.*
+*.log
+# Archivos de trabajo del diseño: no publicar
+*.dc.html
+canvas.json
+render/
+*.before-*.html
+*.png.bak
+borradores/

@@ -1,0 +1,229 @@
+/* AC Hotel Punta Cana · landing */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/assets/fonts/cormorant-garamond-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/assets/fonts/cormorant-garamond-latin-500-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/assets/fonts/cormorant-garamond-latin-600-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/assets/fonts/cormorant-garamond-latin-400-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/assets/fonts/cormorant-garamond-latin-500-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/assets/fonts/montserrat-latin-300-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/assets/fonts/montserrat-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/assets/fonts/montserrat-latin-500-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/assets/fonts/montserrat-latin-600-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/assets/fonts/montserrat-latin-700-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/assets/fonts/work-sans-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/assets/fonts/work-sans-latin-500-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/assets/fonts/work-sans-latin-600-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+:root{
+  --ac-slate:#656B71;
+  --ac-sand:#C1B6A9;
+  --ac-taupe:#A1917D;
+  --ac-dark-beige:#80694C;
+  --ac-neutral-beige:#E6E2DD;
+  --ac-white:#FFFFFF;
+  --ac-gray-100:#F4F4F4;
+  --ac-near-black:#1C1C1C;
+  --ac-sand-hover:#A0978D;
+  --surface-page:var(--ac-white);
+  --surface-muted:var(--ac-gray-100);
+  --surface-warm:var(--ac-neutral-beige);
+  --surface-dark:var(--ac-slate);
+  --surface-darkest:var(--ac-near-black);
+  --text-primary:var(--ac-near-black);
+  --text-secondary:#4A4A4A;
+  --text-inverse:var(--ac-white);
+  --text-link:var(--ac-dark-beige);
+  --border-default:#D8D3CC;
+  --border-strong:var(--ac-near-black);
+  --btn-primary-bg:var(--ac-sand);
+  --btn-primary-bg-hover:var(--ac-sand-hover);
+  --btn-primary-text:var(--ac-white);
+  --btn-secondary-border:var(--ac-near-black);
+  --btn-secondary-text:var(--ac-near-black);
+  --btn-secondary-hover-bg:var(--ac-slate);
+  --btn-secondary-hover-text:var(--ac-white);
+  --btn-tertiary-text:var(--ac-dark-beige);
+  --accent-interactive:var(--ac-taupe);
+  --accent-decorative:var(--ac-taupe);
+  --focus-ring:var(--ac-dark-beige);
+}
+:root{
+  --font-display:'Montserrat',sans-serif;
+  --font-heading:'Work Sans',sans-serif;
+  --font-body:'Work Sans',sans-serif;
+  --weight-light:300;
+  --weight-regular:400;
+  --weight-medium:500;
+  --weight-semibold:600;
+  --weight-bold:700;
+  --text-h1:44px;
+  --lh-h1:52px;
+  --text-h2:32px;
+  --lh-h2:40px;
+  --text-h3:24px;
+  --lh-h3:30px;
+  --text-h4:20px;
+  --lh-h4:26px;
+  --text-h5:16px;
+  --lh-h5:22px;
+  --text-body:16px;
+  --lh-body:20px;
+  --text-body-sm:14px;
+  --lh-body-sm:18px;
+  --text-body-xs:12px;
+  --lh-body-xs:14px;
+  --tracking-eyebrow:0.08em;
+}
+:root{
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-8:32px;
+  --space-10:40px;
+  --space-12:48px;
+  --space-16:64px;
+  --space-20:80px;
+  --space-24:96px;
+  --radius-sm:2px;
+  --radius-md:4px;
+  --radius-lg:8px;
+  --radius-pill:999px;
+  --shadow-sm:0 1px 3px rgba(28,28,28,0.08);
+  --shadow-md:0 4px 16px rgba(28,28,28,0.10);
+  --shadow-lg:0 12px 32px rgba(28,28,28,0.14);
+  --border-width:1px;
+  --container-max:1280px;
+}
+
+html,body{overflow-x:hidden;max-width:100%}
+body{margin:0}
+a{color:#80694C}a:hover{color:#1C1C1C}
+summary{cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}
+[data-noscroll]{scrollbar-width:none}[data-noscroll]::-webkit-scrollbar{display:none}
+@keyframes acMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes acSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes acZoom{from{transform:scale(1)}to{transform:scale(1.1)}}
+@keyframes acRise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes acBob{from{transform:translateY(0)}to{transform:translateY(7px)}}
+@keyframes acSleigh{0%{transform:translateX(-130px)}50%{transform:translateX(370px)}100%{transform:translateX(370px)}}
+@keyframes acHop{from{transform:translateY(0)}to{transform:translateY(-4px)}}
+@keyframes acBurst{0%{transform:scale(0.1);opacity:0}8%{opacity:1}30%{opacity:0.9}48%{transform:scale(1);opacity:0}100%{transform:scale(1);opacity:0}}
+@keyframes acFlag{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+@keyframes acPing{0%{transform:scale(0.4);opacity:0.75}100%{transform:scale(1.9);opacity:0}}
+@keyframes acFloat{from{transform:translateY(0) rotate(-3deg)}to{transform:translateY(-5px) rotate(3deg)}}
+@keyframes acDash{to{stroke-dashoffset:-30}}
+@keyframes acTick{to{stroke-dashoffset:0}}
+@keyframes acDraw{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes acSwing{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
+@keyframes acSway{from{transform:rotate(-2.5deg)}to{transform:rotate(-0.5deg)}}
+@media (hover: hover){
+.v-d #d-servicios li>span:last-child{transition:rotate 2.2s cubic-bezier(.22,1.55,.42,.92)}
+.v-d #d-servicios li:hover>span:last-child{rotate:5.5deg;transition:rotate .45s cubic-bezier(.2,.7,.3,1)}
+.v-d #d-servicios li:hover+li>span:last-child{rotate:3.4deg;transition:rotate .6s cubic-bezier(.2,.7,.3,1) .09s}
+.v-d #d-servicios li:hover+li+li>span:last-child{rotate:1.9deg;transition:rotate .75s cubic-bezier(.2,.7,.3,1) .18s}
+.v-d #d-servicios li:hover+li+li+li>span:last-child{rotate:.9deg;transition:rotate .9s cubic-bezier(.2,.7,.3,1) .27s}
+.v-d #d-servicios li:has(+li:hover)>span:last-child{rotate:2.4deg;transition:rotate .6s cubic-bezier(.2,.7,.3,1) .09s}
+.v-d #d-servicios li:has(+li+li:hover)>span:last-child{rotate:1.1deg;transition:rotate .75s cubic-bezier(.2,.7,.3,1) .18s}
+}
+*{font-variant-numeric: lining-nums}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+[hidden]{display:none !important}
+a{color:#6E5A40}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#D9D2C8;min-height:100vh}
+.v-d{display:none}
+@media (min-width: 1280px){.v-m{display:none}.v-d{display:block}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid #1C1C1C;outline-offset:2px}
