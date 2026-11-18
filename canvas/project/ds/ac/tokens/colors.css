@@ -1,0 +1,33 @@
+:root{
+  --ac-slate:#656B71;
+  --ac-sand:#C1B6A9;
+  --ac-taupe:#A1917D;
+  --ac-dark-beige:#80694C;
+  --ac-neutral-beige:#E6E2DD;
+  --ac-white:#FFFFFF;
+  --ac-gray-100:#F4F4F4;
+  --ac-near-black:#1C1C1C;
+  --ac-sand-hover:#A0978D;
+  --surface-page:var(--ac-white);
+  --surface-muted:var(--ac-gray-100);
+  --surface-warm:var(--ac-neutral-beige);
+  --surface-dark:var(--ac-slate);
+  --surface-darkest:var(--ac-near-black);
+  --text-primary:var(--ac-near-black);
+  --text-secondary:#4A4A4A;
+  --text-inverse:var(--ac-white);
+  --text-link:var(--ac-dark-beige);
+  --border-default:#D8D3CC;
+  --border-strong:var(--ac-near-black);
+  --btn-primary-bg:var(--ac-sand);
+  --btn-primary-bg-hover:var(--ac-sand-hover);
+  --btn-primary-text:var(--ac-white);
+  --btn-secondary-border:var(--ac-near-black);
+  --btn-secondary-text:var(--ac-near-black);
+  --btn-secondary-hover-bg:var(--ac-slate);
+  --btn-secondary-hover-text:var(--ac-white);
+  --btn-tertiary-text:var(--ac-dark-beige);
+  --accent-interactive:var(--ac-taupe);
+  --accent-decorative:var(--ac-taupe);
+  --focus-ring:var(--ac-dark-beige);
+}

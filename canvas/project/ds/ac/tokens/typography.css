@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Work+Sans:wght@400;500;600;700&display=swap');
+:root{
+  --font-display:'Montserrat',sans-serif;
+  --font-heading:'Work Sans',sans-serif;
+  --font-body:'Work Sans',sans-serif;
+  --weight-light:300;
+  --weight-regular:400;
+  --weight-medium:500;
+  --weight-semibold:600;
+  --weight-bold:700;
+  --text-h1:44px;
+  --lh-h1:52px;
+  --text-h2:32px;
+  --lh-h2:40px;
+  --text-h3:24px;
+  --lh-h3:30px;
+  --text-h4:20px;
+  --lh-h4:26px;
+  --text-h5:16px;
+  --lh-h5:22px;
+  --text-body:16px;
+  --lh-body:20px;
+  --text-body-sm:14px;
+  --lh-body-sm:18px;
+  --text-body-xs:12px;
+  --lh-body-xs:14px;
+  --tracking-eyebrow:0.08em;
+}
