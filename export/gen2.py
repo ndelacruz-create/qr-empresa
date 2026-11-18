@@ -21,7 +21,7 @@ const c=new C();c.state=JSON.parse(process.argv[2]);
 process.stdout.write(JSON.stringify(c.renderVals()));''', src, json.dumps(state)], capture_output=True, text=True, check=True)
     return json.loads(out.stdout)
 
-DATEIF = {'showFeria': '2026-11-21', 'showThanks': '2026-11-26', 'showNoche': '2026-12-24',
+DATEIF = {'showThanks': '2026-11-26', 'showNoche': '2026-12-24',
           'showFin': '2026-12-31', 'showBrunch': '2027-01-01', 'showSS': '2026-12-27'}
 tok = re.compile(r'<sc-for list="\{\{\s*([\w.]+)\s*\}\}" as="(\w+)"[^>]*>|</sc-for>|<sc-if value="\{\{\s*([\w.]+)\s*\}\}"[^>]*>|</sc-if>')
 
@@ -101,7 +101,6 @@ def build(fname):
     rep('{{agenda.when}}', '<span data-agenda="when">{{agenda.when}}</span>')
     rep('{{agenda.name1}}', '<span data-agenda="name1">{{agenda.name1}}</span>')
     rep('{{agenda.name2}}', '<span data-agenda="name2">{{agenda.name2}}</span>')
-    rep('{{ cdFeria }}', '<span data-countdown="2026-11-21"></span>')
     rep('{{ cdThanks }}', '<span data-countdown="2026-11-26"></span>')
     rep('{{nextLastSunday}}', '<span data-lastsunday>{{nextLastSunday}}</span>')
 
@@ -138,7 +137,7 @@ def build(fname):
                     r += '<div data-until="%s" style="display: contents">' % DATEIF[k] + render(n[2], c) + '</div>'
                 elif k == 'hasAgenda':
                     r += '<div data-agenda-wrap style="display: contents">' + render(n[2], c) + '</div>'
-                elif k == 'agenda.feria':
+                elif k == 'agenda.fest':
                     r += '<div data-feria style="display: contents">' + render(n[2], c) + '</div>'
                 elif k == 'noSeason':
                     r += '<div data-noseason hidden>' + render(n[2], c) + '</div>'
@@ -274,7 +273,7 @@ html = re.sub(r'\n{3,}', '\n\n', html)
 
 # ---- Medición de clics: los enlaces de salida pasan por /ir/<nombre>/ (cuenta como página en Vercel) ----
 import html as _h, os as _os
-EVENTOS = [('feria', 'Feria Artesanal'), ('thanksgiving', 'Thanksgiving'), ('nochebuena', 'Nochebuena'),
+EVENTOS = [('thanksgiving', 'Thanksgiving'), ('nochebuena', 'Nochebuena'),
            ('fin-de-ano', 'Fin de A'), ('brunch', 'Brunch de Bienvenida')]
 DEST = {}
 def _slug(t):
@@ -289,7 +288,7 @@ def _nombre(pos, end, url, txt):
         st, sec = secs[-1]
         if before.count('</section>', st) > before.count('<section', st + 1): sec = 'pie'
     if 'privacy' in url: return None
-    if 'calendar.google' in url: return 'feria-calendario'
+    if 'calendar.google' in url: return 'thanksgiving-calendario'
     if 'rockthesport' in url: return 'san-silvestre-inscripcion'
     if 'google.com/maps' in url: return 'mapa-' + ('alrededores' if sec == 'llegar' else 'direccion')
     if sec == 'temporada':

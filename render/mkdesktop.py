@@ -77,28 +77,21 @@ s = s[:i] + d + s[j:]
 i, j = sec('<section id="temporada"', '</section>')
 d = s[i:j]
 d = d.replace('padding: 44px 20px 0; display: flex; flex-direction: column">', 'padding: 96px 40px 0; display: flex; flex-direction: column">')
-a = d.index('<sc-if value="{{showFeria}}"'); b = d.index('<sc-if value="{{noSeason}}"')
+a = d.index('<sc-if value="{{showThanks}}"'); b = d.index('<sc-if value="{{noSeason}}"')
 grid = d[a:b]
-BIG = 'flex: 1 1 480px; max-width: 546px; box-sizing: border-box; '
 SMALL = 'flex: 1 1 320px; max-width: 354px; box-sizing: border-box; '
 n = 0
-def r1(a_, b_):
+def r1(a_, b_, k=1):
     global grid, n
-    assert grid.count(a_) == 1, a_[:70]
+    assert grid.count(a_) == k, (a_[:70], grid.count(a_))
     grid = grid.replace(a_, b_); n += 1
-r1('<article data-feria-card="1" style="position: relative; margin-top: 36px;', '<article data-feria-card="1" style="' + BIG + 'position: relative; margin-top: 0;')
-r1('<div style="flex-grow: 1; padding: 18px 18px 18px; display: flex; flex-direction: column">', '<div style="flex-grow: 1; padding: 22px 30px 26px; display: flex; flex-direction: column">')
-r1('gap: 6px; padding: 14px 14px 0">', 'gap: 10px; padding: 18px 30px 0">')
-r1('right: 10px; top: 92px; width: 92px; height: 92px;', 'right: 26px; top: 128px; width: 92px; height: 92px;')
-r1('<article style="margin-top: 34px; border: 1px solid var(--ac-dark-beige); padding: 10px; background: var(--ac-white);',
-   '<article style="' + BIG + 'margin-top: 0; border: 1px solid var(--ac-dark-beige); padding: 10px; background: var(--ac-white);')
-r1('<div style="height: 112px; overflow: hidden; margin-top: 10px"><img src="/_blob/b69dd9c91f97c30b752834dcad247f99" alt="Mesa de Thanksgiving con pavo y brindis con vino" style="width: 100%; height: 112px;',
-   '<div style="height: 250px; overflow: hidden; margin-top: 10px"><img src="/_blob/b69dd9c91f97c30b752834dcad247f99" alt="Mesa de Thanksgiving con pavo y brindis con vino" style="width: 100%; height: 250px;')
-r1('<div style="padding: 14px 10px 8px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px">',
-   '<div style="flex-grow: 1; padding: 16px 18px 12px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px">')
-r1('style="align-self: stretch; display: flex; align-items: center; justify-content: center; min-height: 52px; background: var(--ac-near-black);',
-   'style="align-self: stretch; margin-top: auto; display: flex; align-items: center; justify-content: center; min-height: 52px; background: var(--ac-near-black);')
-r1('style="position: relative; margin-top: 18px; border: 1px solid var(--ac-dark-beige); padding: 0 16px 44px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-dark-beige); padding: 0 16px 44px;')
+r1('<article data-fest-card="1" style="position: relative; margin-top: 36px;', '<article data-fest-card="1" style="flex: 1 1 100%; max-width: 1118px; box-sizing: border-box; display: grid !important; grid-template-columns: 1fr 1fr; position: relative; margin-top: 0;')
+r1('<div aria-hidden="true" style="height: 14px; background:', '<div aria-hidden="true" style="grid-column: 1 / -1; height: 14px; background:', 2)
+r1('<div style="position: relative; height: 176px; overflow: hidden; margin: 14px 14px 0;', '<div style="position: relative; min-height: 470px; overflow: hidden; margin: 22px 0 22px 22px;')
+r1('style="width: 100%; height: 100%; object-fit: cover; display: block; animation: acZoom', 'style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; display: block; animation: acZoom')
+r1('right: 8px; top: 128px; z-index: 1;', 'right: auto; left: calc(50% - 70px); top: 40px; z-index: 1;')
+r1('<div style="flex-grow: 1; padding: 18px 18px 18px; display: flex; flex-direction: column">', '<div style="flex-grow: 1; padding: 34px 44px 30px; display: flex; flex-direction: column">')
+r1('style="position: relative; margin-top: 34px; border: 1px solid var(--ac-dark-beige); padding: 0 16px 44px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-dark-beige); padding: 0 16px 44px;')
 r1('style="position: relative; margin-top: 18px; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;')
 r1('style="margin-top: 18px; border: 1px solid var(--ac-dark-beige); padding: 0 16px 18px;', 'style="' + SMALL + 'margin-top: 0; border: 1px solid var(--ac-dark-beige); padding: 0 16px 18px;')
 d = d[:a] + '<div style="margin-top: 52px; display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 44px 28px">\n' + grid + '</div>\n' + d[b:]

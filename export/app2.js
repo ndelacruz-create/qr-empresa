@@ -29,8 +29,7 @@
   function $all(sel, root) { return Array.prototype.slice.call(root.querySelectorAll(sel)); }
 
   var agendaAll = [
-    { f: '2026-11-21', name: 'Feria Artesanal', href: 'temporada', feria: true },
-    { f: '2026-11-26', name: 'Cena de Thanksgiving', href: 'temporada' },
+    { f: '2026-11-26', name: 'Cena de Thanksgiving', href: 'temporada', feria: true },
     { f: '2026-12-24', name: 'Cena de Nochebuena', href: 'temporada' },
     { f: '2026-12-27', name: 'San Silvestre del Caribe', href: 'comunidad' },
     { f: '2026-12-31', name: 'Gran Cena de Fin de Año', href: 'temporada' },
