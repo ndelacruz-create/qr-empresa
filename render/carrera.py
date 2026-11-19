@@ -108,7 +108,7 @@ FIN=('<sc-if value="{{showFin}}" hint-placeholder-val="{{true}}">\n'
 i=s.index('<sc-if value="{{showFin}}"'); j=s.index('</sc-if>',s.index('</a>',i))+8; s=s[:i]+FIN+s[j:]
 BR=('<sc-if value="{{showBrunch}}" hint-placeholder-val="{{true}}">\n'
 '<article data-brunch-card="1" style="position: relative; margin-top: 34px; background: #FBF8F4; border: 1px solid var(--ac-dark-beige); display: flex; flex-direction: column; color: var(--text-primary)">\n'
-'<div style="position: relative; height: 150px; overflow: hidden"><img src="/_blob/5c1e8edad722490adac45253bcf680fb" alt="Estación de buffet del brunch" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>\n'
+'<div style="position: relative; height: 150px; overflow: hidden"><img src="/_blob/913442a843da7607597400e3a1b5a982" alt="Brindis con cócteles junto a la piscina" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>\n'
 '<div style="padding: 0 18px 20px; display: flex; flex-direction: column">'
 '<span style="align-self: flex-start; margin-top: -14px; position: relative; background: #FBF8F4; border: 1px solid var(--ac-dark-beige); padding: 5px 12px; font-family: var(--font-display); font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ac-dark-beige)">Vie 1 ene · desde la 1:00 pm</span>'
 '<h3 style="margin: 12px 0 0; font-family: \'Cormorant Garamond\', serif; font-weight: 500; font-size: 28px; line-height: 31px">Brunch de Bienvenida <span style="font-style: italic; color: var(--ac-dark-beige)">2027</span></h3>'
