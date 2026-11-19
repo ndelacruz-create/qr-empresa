@@ -43,7 +43,7 @@ RUN=('<div aria-hidden="true" style="position: relative; height: 52px; margin-to
 KIT=('<div style="margin-top: 18px; display: flex; gap: 12px; align-items: flex-start; padding: 14px; border: 1px solid rgba(255,255,255,0.35)">'
  '<svg aria-hidden="true" width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="'+PINK+'" stroke-width="1.6" stroke-linejoin="round" style="flex-shrink: 0"><path d="M4 9h18l-1.5 14h-15z"/><path d="M9 9V6.5a4 4 0 0 1 8 0V9"/></svg>'
  '<div style="display: flex; flex-direction: column; gap: 3px"><span style="font-family: var(--font-display); font-weight: 600; font-size: 15px; line-height: 20px">Recoge tu kit en AC Hotel</span>'
- '<span style="font-size: 13px; line-height: 19px; color: rgba(255,255,255,0.85)">[por confirmar: días y horario de entrega de kits]</span></div></div>')
+ '<span style="font-size: 13px; line-height: 19px; color: rgba(255,255,255,0.85)">Sábado 26 de diciembre, un día antes de la carrera.</span></div></div>')
 SEC=('<sc-if value="{{showSS}}" hint-placeholder-val="{{true}}">\n<section id="comunidad" style="padding: 36px 12px 0">\n'
 '<article data-race-card="1" style="position: relative; overflow: hidden; background: '+IND+'; color: '+W+'; box-shadow: var(--shadow-lg); animation: acRise 0.9s ease-out both">\n'
 '<div style="background: repeating-conic-gradient(from 0deg at 50% 80%, '+MAG+' 0deg 10deg, '+PUR+' 10deg 20deg); padding: 22px 18px 26px; display: flex; flex-direction: column">'
