@@ -1,4 +1,4 @@
-import re, os
+import re
 S = os.environ.get('KIT') or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 s=open(S+'/canvas/project/V2.dc.html',encoding='utf-8').read()
 RED,GREEN,GOLD,CREAM,INK,PINE='#A3262E','#1E4D3A','#C9A24A','#FBF6EC','#1E2B24','#2E6B4F'
@@ -61,13 +61,6 @@ card=('<sc-if value="{{showNoche}}" hint-placeholder-val="{{true}}">\n'
 '<div style="margin-top: 4px; font-size: 12px; line-height: 17px; color: #46524A">Precios + 28% de impuestos.</div></div>\n'
 '<a href="https://wa.link/hwnaf7" target="_blank" rel="noopener noreferrer" style="margin-top: 18px; min-height: 52px; background: '+RED+'; color: '+CREAM+'; font-size: 12px; '+BTN+'">Escríbenos para asistir</a>\n'
 '<a href="'+CAL+'" target="_blank" rel="noopener noreferrer" style="margin-top: 10px; min-height: 44px; border: 1px solid '+INK+'; color: '+INK+'; font-size: 11px; '+BTN+'">Guárdalo en tu calendario</a>\n'
-'<div style="margin-top: 22px; padding: 16px 16px 18px; border: 1px dashed '+GREEN+'; display: flex; flex-direction: column">'
-'<span style="font-family: var(--font-display); font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: '+GREEN+'">¿Prefieres cenar en casa?</span>'
-'<span style="margin-top: 6px; font-family: \'Cormorant Garamond\', serif; font-style: italic; font-weight: 600; font-size: 28px; line-height: 30px; color: '+INK+'">Take out de Nochebuena</span>'
-'<span style="margin-top: 6px; font-family: \'Cormorant Garamond\', serif; font-size: 18px; line-height: 23px; color: '+INK+'">[Qué incluye]</span>'
-'<span style="margin-top: 8px; font-weight: 600; letter-spacing: 0.02em; font-family: var(--font-display); font-size: 14px; color: '+RED+'">[Precio] + imp.</span>'
-'<span style="margin-top: 4px; font-size: 12px; line-height: 17px; color: #46524A">Pedidos hasta el [fecha].</span>'
-'<a href="https://wa.link/hwnaf7" target="_blank" rel="noopener noreferrer" style="margin-top: 14px; min-height: 44px; background: '+GREEN+'; color: '+CREAM+'; font-size: 11px; '+BTN+'">Pide tu take out</a></div>\n'
 '</div>\n'+STRIP.replace('"></div>','; transform: scaleY(-1)"></div>')+'\n</article>\n</sc-if>')
 s=s[:i]+card+s[j:]
 assert 'Thanksgiving' not in s, s.count('Thanksgiving')
