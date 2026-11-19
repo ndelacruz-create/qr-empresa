@@ -101,7 +101,7 @@ def build(fname):
     rep('{{agenda.when}}', '<span data-agenda="when">{{agenda.when}}</span>')
     rep('{{agenda.name1}}', '<span data-agenda="name1">{{agenda.name1}}</span>')
     rep('{{agenda.name2}}', '<span data-agenda="name2">{{agenda.name2}}</span>')
-    for _k, _d in (('cdThanks', '2026-11-26'), ('cdNoche', '2026-12-24'), ('cdSS', '2026-12-27')):
+    for _k, _d in (('cdThanks', '2026-11-26'), ('cdNoche', '2026-12-24'), ('cdSS', '2026-12-27'), ('cdFin', '2026-12-31')):
         if '{{ %s }}' % _k in body: rep('{{ %s }}' % _k, '<span data-countdown="%s"></span>' % _d)
     rep('{{nextLastSunday}}', '<span data-lastsunday>{{nextLastSunday}}</span>')
 
@@ -294,7 +294,7 @@ def _nombre(pos, end, url, txt):
         st, sec = secs[-1]
         if before.count('</section>', st) > before.count('<section', st + 1): sec = 'pie'
     if 'privacy' in url: return None
-    if 'calendar.google' in url: return ('nochebuena' if 'Nochebuena' in url else 'thanksgiving') + '-calendario'
+    if 'calendar.google' in url: return ('nochebuena' if 'Nochebuena' in url else 'fin-de-ano' if 'Fin+de+A' in url else 'thanksgiving') + '-calendario'
     if 'rockthesport' in url: return 'san-silvestre-inscripcion'
     if 'google.com/maps' in url: return 'mapa-' + ('alrededores' if sec == 'llegar' else 'direccion')
     if sec == 'temporada' and 'take out' in txt.lower(): return 'whatsapp-nochebuena-takeout'

@@ -98,7 +98,11 @@ r1('<div style="flex-grow: 1; padding: 18px 18px 18px; display: flex; flex-direc
 r1('style="position: relative; margin-top: 34px; border: 1px solid var(--ac-dark-beige); padding: 0 16px 44px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-dark-beige); padding: 0 16px 44px;', opt=True)
 r1('style="position: relative; margin-top: 18px; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', opt=True)
 r1('style="position: relative; margin-top: 34px; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', opt=True)
-r1('style="margin-top: 18px; border: 1px solid var(--ac-dark-beige); padding: 0 16px 18px;', 'style="' + SMALL + 'margin-top: 0; border: 1px solid var(--ac-dark-beige); padding: 0 16px 18px;')
+r1('style="margin-top: 18px; border: 1px solid var(--ac-dark-beige); padding: 0 16px 18px;', 'style="' + SMALL + 'margin-top: 0; border: 1px solid var(--ac-dark-beige); padding: 0 16px 18px;', opt=True)
+r1('<article data-brunch-card="1" style="position: relative; margin-top: 34px;', '<article data-brunch-card="1" style="flex: 1 1 100%; max-width: 1118px; box-sizing: border-box; display: grid !important; grid-template-columns: 5fr 7fr; position: relative; margin-top: 0;', opt=True)
+r1('<div style="position: relative; height: 150px; overflow: hidden"><img src="/_blob/5c1e8edad722490adac45253bcf680fb"', '<div style="position: relative; min-height: 300px; overflow: hidden"><img src="/_blob/5c1e8edad722490adac45253bcf680fb"', opt=True)
+r1('alt="Estación de buffet del brunch" style="width: 100%; height: 100%;', 'alt="Estación de buffet del brunch" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%;', opt=True)
+r1('<div style="padding: 0 18px 20px; display: flex; flex-direction: column"><span style="align-self: flex-start; margin-top: -14px;', '<div style="padding: 34px 40px 30px; display: flex; flex-direction: column"><span style="align-self: flex-start; margin-top: 0;', opt=True)
 d = d[:a] + '<div style="margin-top: 52px; display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 44px 28px">\n' + grid + '</div>\n' + d[b:]
 s = s[:i] + d + s[j:]
 

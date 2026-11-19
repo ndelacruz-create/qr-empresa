@@ -63,3 +63,52 @@ KF="@keyframes acRoute{0%{transform:scaleX(0);opacity:1}80%{transform:scaleX(1);
 s=s.replace('</style>',KF+'</style>',1)
 assert 'Nochebuena' not in re.sub(r'<script.*?</script>','',s,flags=re.S).replace('cdNoche',''), 'quedó Nochebuena'
 open(S+'/canvas/project/V2-carrera.dc.html','w',encoding='utf-8').write(s); print('ok')
+
+# ===================== Fin de Año destacada y Brunch mediano =====================
+s=open(S+'/canvas/project/V2-carrera.dc.html',encoding='utf-8').read()
+BLK,GOLD,CHAMP,CRM='#161514','#C9A24A','#E9D8A6','#F6EFE2'
+DECO='repeating-linear-gradient(135deg, '+GOLD+' 0 4px, '+BLK+' 4px 9px)'
+STRIP='<div aria-hidden="true" style="height: 14px; background: '+DECO+'"></div>'
+STAR4='M0 -6 C0.8 -1.4 1.4 -0.8 6 0 C1.4 0.8 0.8 1.4 0 6 C-0.8 1.4 -1.4 0.8 -6 0 C-1.4 -0.8 -0.8 -1.4 0 -6Z'
+TW=''.join('<svg aria-hidden="true" width="18" height="18" viewBox="-9 -9 18 18" style="position: absolute; left: %s; top: %s; overflow: visible; animation: acTwinkle %.1fs %.1fs ease-in-out infinite"><path d="%s" fill="%s" transform="scale(%s)"/></svg>'%(x,y,d,dl,STAR4,c,sc) for x,y,d,dl,c,sc in (('12%','14%',2.4,0,CHAMP,1.2),('30%','8%',3.0,0.8,W,0.8),('58%','18%',2.6,1.4,CHAMP,1),('80%','10%',3.2,0.4,W,1.3),('70%','40%',2.8,2.0,CHAMP,0.7)))
+SEALF=('<div aria-hidden="true" style="position: absolute; right: 8px; top: 118px; z-index: 1; width: 104px; height: 104px; transform: rotate(-6deg); filter: drop-shadow(0 3px 8px rgba(0,0,0,0.45))">'
+ '<svg width="104" height="104" viewBox="0 0 104 104" style="display: block">'
+ '<defs><path id="fySealRim" d="M52 52 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/></defs>'
+ '<circle cx="52" cy="52" r="51" fill="'+GOLD+'"/><circle cx="52" cy="52" r="47.5" fill="none" stroke="'+BLK+'" stroke-width="1"/><circle cx="52" cy="52" r="28.5" fill="none" stroke="'+BLK+'" stroke-width="1"/>'
+ '<g style="transform-box: view-box; transform-origin: 52px 52px; animation: acSpin 36s linear infinite"><text fill="'+BLK+'" style="font-family: Montserrat, sans-serif; font-size: 8.2px; font-weight: 700; letter-spacing: 0.16em"><textPath href="#fySealRim" textLength="232" lengthAdjust="spacing">PREVENTA ✦ OPEN BAR ✦ ORQUESTA EN VIVO ✦</textPath></text></g>'
+ '<text x="52" y="61" text-anchor="middle" fill="'+BLK+'" style="font-family: \'Cormorant Garamond\', serif; font-style: italic; font-weight: 700; font-size: 24px">2027</text></svg></div>')
+BTNS='display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none'
+ITEMS=['Orquesta en vivo','Trago de bienvenida','1 botella de vino por mesa','Estación de buffet','Open bar','Cotillones','Ritual de las 12 uvas','Conteo regresivo','Fuegos artificiales fríos']
+LIST=('<ul style="margin: 16px 0 0; padding: 14px 0 0; border-top: 1px solid rgba(201,162,74,0.5); list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 7px 14px; font-size: 13.5px; line-height: 18px; color: '+CRM+'">'
+ +''.join('<li style="display: flex; gap: 7px; align-items: baseline"><svg aria-hidden="true" width="8" height="8" viewBox="-6 -6 12 12" style="flex-shrink: 0"><path d="'+STAR4+'" fill="'+GOLD+'"/></svg><span>'+t+'</span></li>' for t in ITEMS)+'</ul>')
+CALF=('https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Gran+Cena+de+Fin+de+A%C3%B1o+en+AC+Hotel+Punta+Cana&amp;dates=20261231T230000Z/20270101T040000Z'
+      '&amp;location=AC+Hotel+Punta+Cana,+Av.+Barcel%C3%B3+Km+9,+B%C3%A1varo&amp;details=Orquesta+en+vivo,+open+bar+y+fuegos+artificiales+fr%C3%ADos.+Reserva+por+WhatsApp.')
+FIN=('<sc-if value="{{showFin}}" hint-placeholder-val="{{true}}">\n'
+'<article data-fest-card="1" style="position: relative; margin-top: 36px; background: '+BLK+'; border: 2px solid '+GOLD+'; color: '+CRM+'; overflow: hidden; display: flex; flex-direction: column; animation: acRise 0.9s ease-out both">\n'+STRIP+'\n'
+'<div style="position: relative; height: 176px; overflow: hidden; margin: 14px 14px 0; border: 1px solid '+GOLD+'"><img src="/_blob/5afe661ac36a6e9b2d608f682e37d278" alt="Brindis con luces de bengala" style="width: 100%; height: 100%; object-fit: cover; display: block; animation: acZoom 10s ease-out both">'+TW+'</div>\n'+SEALF+'\n'
+'<div style="flex-grow: 1; padding: 18px 18px 18px; display: flex; flex-direction: column">\n'
+'<div style="align-self: flex-start; background: '+GOLD+'; color: '+BLK+'; padding: 7px 10px; font-family: var(--font-display); font-size: 9.5px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; white-space: nowrap">Jue 31 dic · 7:00 pm · {{ cdFin }}</div>\n'
+'<h3 style="margin: 14px 0 0; display: flex; flex-direction: column; max-width: calc(100% - 84px)"><span style="font-family: \'Cormorant Garamond\', serif; font-weight: 500; font-size: 26px; line-height: 28px; color: '+CRM+'">Gran Cena de</span><span style="font-family: \'Cormorant Garamond\', serif; font-style: italic; font-weight: 600; font-size: 44px; line-height: 46px; color: '+CHAMP+'">Fin de Año</span></h3>\n'
+'<p style="margin: 10px 0 0; font-family: \'Cormorant Garamond\', serif; font-style: italic; font-size: 20px; line-height: 25px; color: '+CRM+'">Despide el año con una noche inolvidable.</p>\n'+LIST+'\n'
+'<div style="margin-top: 16px; padding: 12px 14px; border: 1px solid rgba(201,162,74,0.55); display: flex; flex-direction: column; gap: 4px">'
+'<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px"><span style="font-family: var(--font-display); font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: '+GOLD+'">Preventa</span><span style="font-family: var(--font-display); font-weight: 700; font-size: 20px; color: '+CHAMP+'">US$120 <span style="font-size: 13px; font-weight: 600">+ imp.</span></span></div>'
+'<div style="font-size: 12px; line-height: 17px; color: rgba(246,239,226,0.8)">Precio por persona. Infantes de 0 a 6 años, gratis.</div></div>\n'
+'<a href="https://wa.link/hwnaf7" target="_blank" rel="noopener noreferrer" style="margin-top: 18px; min-height: 52px; background: '+GOLD+'; color: '+BLK+'; font-size: 12px; '+BTNS+'">Escríbenos para asistir</a>\n'
+'<a href="'+CALF+'" target="_blank" rel="noopener noreferrer" style="margin-top: 10px; min-height: 44px; border: 1px solid '+CHAMP+'; color: '+CHAMP+'; font-size: 11px; '+BTNS+'">Guárdalo en tu calendario</a>\n'
+'</div>\n'+STRIP.replace('"></div>','; transform: scaleY(-1)"></div>')+'\n</article>\n</sc-if>')
+i=s.index('<sc-if value="{{showFin}}"'); j=s.index('</sc-if>',s.index('</a>',i))+8; s=s[:i]+FIN+s[j:]
+BR=('<sc-if value="{{showBrunch}}" hint-placeholder-val="{{true}}">\n'
+'<article data-brunch-card="1" style="position: relative; margin-top: 34px; background: #FBF8F4; border: 1px solid var(--ac-dark-beige); display: flex; flex-direction: column; color: var(--text-primary)">\n'
+'<div style="position: relative; height: 150px; overflow: hidden"><img src="/_blob/5c1e8edad722490adac45253bcf680fb" alt="Estación de buffet del brunch" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>\n'
+'<div style="padding: 0 18px 20px; display: flex; flex-direction: column">'
+'<span style="align-self: flex-start; margin-top: -14px; position: relative; background: #FBF8F4; border: 1px solid var(--ac-dark-beige); padding: 5px 12px; font-family: var(--font-display); font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ac-dark-beige)">Vie 1 ene · desde la 1:00 pm</span>'
+'<h3 style="margin: 12px 0 0; font-family: \'Cormorant Garamond\', serif; font-weight: 500; font-size: 28px; line-height: 31px">Brunch de Bienvenida <span style="font-style: italic; color: var(--ac-dark-beige)">2027</span></h3>'
+'<p style="margin: 6px 0 0; font-family: \'Cormorant Garamond\', serif; font-style: italic; font-size: 18px; line-height: 23px; color: var(--text-secondary)">Comienza el año celebrando en familia.</p>'
+'<p style="margin: 10px 0 0; font-size: 13.5px; line-height: 20px">DJ en vivo · Estación de buffet · Trago de bienvenida · Open bar de cervezas y bebidas sin alcohol</p>'
+'<div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px 16px; font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--ac-dark-beige)"><span>Adultos US$50 + imp.</span><span>Niños 6–15 US$25 + imp.</span><span>0–6 años gratis</span></div>'
+'<a href="https://wa.link/hwnaf7" target="_blank" rel="noopener noreferrer" style="margin-top: 16px; min-height: 46px; border: 1px solid var(--text-primary); color: var(--text-primary); font-size: 11px; '+BTNS+'">Escríbenos para asistir</a></div>\n'
+'</article>\n</sc-if>')
+i=s.index('<sc-if value="{{showBrunch}}"'); j=s.index('</sc-if>',s.index('</a>',i))+8; s=s[:i]+BR+s[j:]
+s=s.replace("cdSS: cd(2026, 12, 27),","cdSS: cd(2026, 12, 27), cdFin: cd(2026, 12, 31),",1)
+s=s.replace('</style>','@keyframes acTwinkle{0%,100%{opacity:0.15;transform:scale(0.6)}50%{opacity:1;transform:scale(1)}}</style>',1)
+open(S+'/canvas/project/V2-carrera.dc.html','w',encoding='utf-8').write(s); print('fin ok')
