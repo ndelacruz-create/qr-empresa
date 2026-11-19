@@ -124,7 +124,7 @@ if 'También corremos' in s:
     rep('font-weight: 600; font-size: 34px; line-height: 34px; letter-spacing: -0.02em; text-transform: uppercase">San Silvestre del Caribe', 'font-weight: 600; font-size: 56px; line-height: 56px; letter-spacing: -0.02em; text-transform: uppercase">San Silvestre del Caribe')
     rep('<div style="font-weight: 600; font-size: 17px; line-height: 22px">Dom 27 de diciembre', '<div style="font-weight: 600; font-size: 21px; line-height: 28px">Dom 27 de diciembre')
     rep('<div style="margin: auto -18px 0; background: #14009A; color: var(--ac-white); padding: 14px 18px;', '<div style="margin: auto -32px 0; background: #14009A; color: var(--ac-white); padding: 16px 32px;')
-else:
+elif 'data-race-card' in s:
     rep('<section id="comunidad" style="padding: 36px 12px 0">', '<section id="comunidad" style="padding: 72px 40px 0; display: flex; justify-content: center">')
     rep('<article data-race-card="1" style="position: relative;', '<article data-race-card="1" style="width: 900px; position: relative;')
     rep('padding: 22px 18px 26px; display: flex; flex-direction: column">', 'padding: 44px 48px 44px; display: grid; grid-template-columns: 1fr 260px; column-gap: 40px; align-content: start">')
