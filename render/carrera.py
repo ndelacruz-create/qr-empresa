@@ -71,6 +71,15 @@ DECO='repeating-linear-gradient(135deg, '+GOLD+' 0 4px, '+BLK+' 4px 9px)'
 STRIP='<div aria-hidden="true" style="height: 14px; background: '+DECO+'"></div>'
 STAR4='M0 -6 C0.8 -1.4 1.4 -0.8 6 0 C1.4 0.8 0.8 1.4 0 6 C-0.8 1.4 -1.4 0.8 -6 0 C-1.4 -0.8 -0.8 -1.4 0 -6Z'
 TW=''.join('<svg aria-hidden="true" width="18" height="18" viewBox="-9 -9 18 18" style="position: absolute; left: %s; top: %s; overflow: visible; animation: acTwinkle %.1fs %.1fs ease-in-out infinite"><path d="%s" fill="%s" transform="scale(%s)"/></svg>'%(x,y,d,dl,STAR4,c,sc) for x,y,d,dl,c,sc in (('12%','14%',2.4,0,CHAMP,1.2),('30%','8%',3.0,0.8,W,0.8),('58%','18%',2.6,1.4,CHAMP,1),('80%','10%',3.2,0.4,W,1.3),('70%','40%',2.8,2.0,CHAMP,0.7)))
+import math
+def burst(cx, cy, r, col, dur, delay, n=14):
+    rays=''.join('<path d="M%.1f %.1f L%.1f %.1f"/>'%(cx+math.cos(2*math.pi*k/n)*r*0.25, cy+math.sin(2*math.pi*k/n)*r*0.25, cx+math.cos(2*math.pi*k/n)*r, cy+math.sin(2*math.pi*k/n)*r) for k in range(n))
+    dots=''.join('<circle cx="%.1f" cy="%.1f" r="1.3"/>'%(cx+math.cos(2*math.pi*(k+0.5)/n)*r*1.12, cy+math.sin(2*math.pi*(k+0.5)/n)*r*1.12) for k in range(n))
+    trail=('<path d="M%.1f %.1f L%.1f %.1f" stroke="%s" stroke-width="1.6" stroke-linecap="round" style="animation: acFwTrail %.1fs %.1fs ease-out infinite; opacity: 0"/>'%(cx, cy+90, cx, cy+70, col, dur, delay))
+    return (trail+'<g style="transform-box: fill-box; transform-origin: center; animation: acFw %.1fs %.1fs ease-out infinite; opacity: 0">'%(dur,delay)
+            +'<g stroke="%s" stroke-width="1.5" stroke-linecap="round" fill="none">%s</g><g fill="%s">%s</g></g>'%(col,rays,col,dots))
+FW=('<svg aria-hidden="true" viewBox="0 0 320 176" preserveAspectRatio="xMidYMid slice" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; mix-blend-mode: screen">'
+    +burst(70,52,34,'#E9D8A6',3.6,0.2)+burst(205,40,28,'#FFFFFF',3.6,1.4)+burst(140,96,22,'#C9A24A',3.6,2.4,12)+burst(270,92,20,'#E9D8A6',3.6,3.0,12)+'</svg>')
 SEALF=('<div aria-hidden="true" style="position: absolute; right: 8px; top: 118px; z-index: 1; width: 104px; height: 104px; transform: rotate(-6deg); filter: drop-shadow(0 3px 8px rgba(0,0,0,0.45))">'
  '<svg width="104" height="104" viewBox="0 0 104 104" style="display: block">'
  '<defs><path id="fySealRim" d="M52 52 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/></defs>'
@@ -85,7 +94,7 @@ CALF=('https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Gran
       '&amp;location=AC+Hotel+Punta+Cana,+Av.+Barcel%C3%B3+Km+9,+B%C3%A1varo&amp;details=Orquesta+en+vivo,+open+bar+y+fuegos+artificiales+fr%C3%ADos.+Reserva+por+WhatsApp.')
 FIN=('<sc-if value="{{showFin}}" hint-placeholder-val="{{true}}">\n'
 '<article data-fest-card="1" style="position: relative; margin-top: 36px; background: '+BLK+'; border: 2px solid '+GOLD+'; color: '+CRM+'; overflow: hidden; display: flex; flex-direction: column; animation: acRise 0.9s ease-out both">\n'+STRIP+'\n'
-'<div style="position: relative; height: 176px; overflow: hidden; margin: 14px 14px 0; border: 1px solid '+GOLD+'"><img src="/_blob/5afe661ac36a6e9b2d608f682e37d278" alt="Brindis con luces de bengala" style="width: 100%; height: 100%; object-fit: cover; display: block; animation: acZoom 10s ease-out both">'+TW+'</div>\n'+SEALF+'\n'
+'<div style="position: relative; height: 176px; overflow: hidden; margin: 14px 14px 0; border: 1px solid '+GOLD+'"><img src="/_blob/5afe661ac36a6e9b2d608f682e37d278" alt="Brindis con luces de bengala" style="width: 100%; height: 100%; object-fit: cover; display: block; animation: acZoom 10s ease-out both">'+FW+TW+'</div>\n'+SEALF+'\n'
 '<div style="flex-grow: 1; padding: 18px 18px 18px; display: flex; flex-direction: column">\n'
 '<div style="align-self: flex-start; background: '+GOLD+'; color: '+BLK+'; padding: 7px 10px; font-family: var(--font-display); font-size: 9.5px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; white-space: nowrap">Jue 31 dic · 7:00 pm · {{ cdFin }}</div>\n'
 '<h3 style="margin: 14px 0 0; display: flex; flex-direction: column; max-width: calc(100% - 84px)"><span style="font-family: \'Cormorant Garamond\', serif; font-weight: 500; font-size: 26px; line-height: 28px; color: '+CRM+'">Gran Cena de</span><span style="font-family: \'Cormorant Garamond\', serif; font-style: italic; font-weight: 600; font-size: 44px; line-height: 46px; color: '+CHAMP+'">Fin de Año</span></h3>\n'
@@ -110,5 +119,5 @@ BR=('<sc-if value="{{showBrunch}}" hint-placeholder-val="{{true}}">\n'
 '</article>\n</sc-if>')
 i=s.index('<sc-if value="{{showBrunch}}"'); j=s.index('</sc-if>',s.index('</a>',i))+8; s=s[:i]+BR+s[j:]
 s=s.replace("cdSS: cd(2026, 12, 27),","cdSS: cd(2026, 12, 27), cdFin: cd(2026, 12, 31),",1)
-s=s.replace('</style>','@keyframes acTwinkle{0%,100%{opacity:0.15;transform:scale(0.6)}50%{opacity:1;transform:scale(1)}}</style>',1)
+s=s.replace('</style>','@keyframes acTwinkle{0%,100%{opacity:0.15;transform:scale(0.6)}50%{opacity:1;transform:scale(1)}}@keyframes acFw{0%,18%{opacity:0;transform:scale(0.15)}24%{opacity:1}55%{opacity:1;transform:scale(1)}78%,100%{opacity:0;transform:scale(1.12)}}@keyframes acFwTrail{0%{opacity:0;transform:translateY(0)}4%{opacity:1}18%{opacity:0.9;transform:translateY(-70px)}22%,100%{opacity:0;transform:translateY(-74px)}}</style>',1)
 open(S+'/canvas/project/V2-carrera.dc.html','w',encoding='utf-8').write(s); print('fin ok')
