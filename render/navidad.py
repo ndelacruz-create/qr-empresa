@@ -48,8 +48,8 @@ PRICE=lambda a,b:('<div style="display: flex; align-items: baseline; gap: 8px"><
 CAL=('https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Cena+de+Nochebuena+en+AC+Hotel+Punta+Cana&amp;dates=20261224T223000Z/20261225T023000Z'
      '&amp;location=AC+Hotel+Punta+Cana,+Av.+Barcel%C3%B3+Km+9,+B%C3%A1varo&amp;details=Buffet+navide%C3%B1o,+DJs+y+vino+por+mesa.+Reserva+por+WhatsApp.')
 BTN='display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none'
-SLEIGH=('<div aria-hidden="true" style="position: relative; height: 46px; margin: 20px -18px -18px; overflow: hidden; border-bottom: 1px dotted '+GREEN+'; pointer-events: none">'
- '<span style="position: absolute; left: 0; bottom: 2px; animation: acSleigh 13s linear infinite"><svg width="136" height="40" viewBox="0 0 136 40" style="display: block; overflow: visible; animation: acHop 0.7s ease-in-out infinite alternate">'
+SLEIGH=('<div aria-hidden="true" style="position: relative; height: 46px; margin: 20px -18px -18px; overflow: visible; container-type: inline-size; z-index: 2; border-bottom: 1px dotted '+GREEN+'; pointer-events: none">'
+ '<span style="position: absolute; left: 0; bottom: 2px; transform-origin: 30% 100%; animation: acSantaFly 15s linear infinite"><svg width="136" height="40" viewBox="0 0 136 40" style="display: block; overflow: visible; animation: acHop 0.7s ease-in-out infinite alternate">'
  # saco y Santa
  '<circle cx="14" cy="20" r="7" fill="#7A5236"/><path d="M11 13 q3 -3 6 0" stroke="'+GOLD+'" stroke-width="1.2" fill="none"/>'
  '<path d="M20 26 v-8 q0 -6 6 -6 q6 0 6 6 v8z" fill="'+RED+'"/><path d="M20 22 h12" stroke="'+CREAM+'" stroke-width="2"/>'
@@ -82,4 +82,5 @@ s=s[:i]+card+s[j:]
 assert 'Thanksgiving' not in s, s.count('Thanksgiving')
 s=s.replace('<title>Landing AC Hotel Punta Cana, celular, versión 2</title>','<title>Landing AC Hotel Punta Cana, celular, versión 2</title>',1)
 s=s.replace('style="position: relative; margin-top: 18px; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;','style="position: relative; margin-top: 34px; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;')
+s=s.replace('</style>','@keyframes acSantaFly{0%{transform:translate(-150px,0) rotate(0)}38%{transform:translate(calc(48cqw - 68px),0) rotate(0)}50%{transform:translate(calc(68cqw - 68px),-26px) rotate(-10deg)}68%{transform:translate(calc(100cqw + 30px),-240px) rotate(-16deg)}100%{transform:translate(calc(100cqw + 30px),-240px) rotate(-16deg)}}</style>',1)
 open(S+'/canvas/project/V2-navidad.dc.html','w',encoding='utf-8').write(s); print('ok')
