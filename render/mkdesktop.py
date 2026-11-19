@@ -78,7 +78,7 @@ s = s[:i] + d + s[j:]
 i, j = sec('<section id="temporada"', '</section>')
 d = s[i:j]
 d = d.replace('padding: 44px 20px 0; display: flex; flex-direction: column">', 'padding: 96px 40px 0; display: flex; flex-direction: column">')
-a = min(d.index(x) for x in ('<sc-if value="{{showThanks}}"', '<sc-if value="{{showNoche}}"') if x in d); b = d.index('<sc-if value="{{noSeason}}"')
+a = min(d.index(x) for x in ('<sc-if value="{{showThanks}}"', '<sc-if value="{{showNoche}}"', '<sc-if value="{{showFin}}"') if x in d); b = d.index('<sc-if value="{{noSeason}}"')
 grid = d[a:b]
 SMALL = 'flex: 1 1 320px; max-width: 354px; box-sizing: border-box; '
 n = 0
@@ -87,14 +87,14 @@ def r1(a_, b_, k=1, opt=False):
     if opt and a_ not in grid: return
     assert grid.count(a_) == k, (a_[:70], grid.count(a_))
     grid = grid.replace(a_, b_); n += 1
-r1('<article data-fest-card="1" style="position: relative; margin-top: 36px;', '<article data-fest-card="1" style="flex: 1 1 100%; max-width: 1118px; box-sizing: border-box; display: grid !important; grid-template-columns: 1fr 1fr; position: relative; margin-top: 0;')
-r1('<div aria-hidden="true" style="height: 14px; background:', '<div aria-hidden="true" style="grid-column: 1 / -1; height: 14px; background:', 2)
-r1('<div style="position: relative; height: 176px; overflow: hidden; margin: 14px 14px 0;', '<div style="position: relative; min-height: 470px; overflow: hidden; margin: 22px 0 22px 22px;')
-r1('style="width: 100%; height: 100%; object-fit: cover; display: block; animation: acZoom', 'style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; display: block; animation: acZoom')
-r1('right: 8px; top: 118px; z-index: 1; width: 104px; height: 104px;', 'right: auto; left: calc(50% - 96px); top: 40px; z-index: 1; width: 136px; height: 136px;')
-r1('<svg width="104" height="104" viewBox="0 0 104 104"', '<svg width="136" height="136" viewBox="0 0 104 104"')
+r1('<article data-fest-card="1" style="position: relative; margin-top: 36px;', '<article data-fest-card="1" style="flex: 1 1 100%; max-width: 1118px; box-sizing: border-box; display: grid !important; grid-template-columns: 1fr 1fr; position: relative; margin-top: 0;', opt=True)
+r1('<div aria-hidden="true" style="height: 14px; background:', '<div aria-hidden="true" style="grid-column: 1 / -1; height: 14px; background:', 2, opt=True)
+r1('<div style="position: relative; height: 176px; overflow: hidden; margin: 14px 14px 0;', '<div style="position: relative; min-height: 470px; overflow: hidden; margin: 22px 0 22px 22px;', opt=True)
+r1('style="width: 100%; height: 100%; object-fit: cover; display: block; animation: acZoom', 'style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; display: block; animation: acZoom', opt=True)
+r1('right: 8px; top: 118px; z-index: 1; width: 104px; height: 104px;', 'right: auto; left: calc(50% - 96px); top: 40px; z-index: 1; width: 136px; height: 136px;', opt=True)
+r1('<svg width="104" height="104" viewBox="0 0 104 104"', '<svg width="136" height="136" viewBox="0 0 104 104"', opt=True)
 r1('height: 46px; margin: 20px -18px -18px;', 'height: 46px; margin: auto -44px -30px;', opt=True)
-r1('<div style="flex-grow: 1; padding: 18px 18px 18px; display: flex; flex-direction: column">', '<div style="flex-grow: 1; padding: 34px 44px 30px; display: flex; flex-direction: column">')
+r1('<div style="flex-grow: 1; padding: 18px 18px 18px; display: flex; flex-direction: column">', '<div style="flex-grow: 1; padding: 34px 44px 30px; display: flex; flex-direction: column">', opt=True)
 r1('style="position: relative; margin-top: 34px; border: 1px solid var(--ac-dark-beige); padding: 0 16px 44px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-dark-beige); padding: 0 16px 44px;', opt=True)
 r1('style="position: relative; margin-top: 18px; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', opt=True)
 r1('style="position: relative; margin-top: 34px; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', opt=True)
@@ -112,13 +112,22 @@ rep('<div style="position: relative; height: 200px; overflow: hidden">', '<div s
 s = s.replace('style="width: 100%; height: 200px; object-fit: cover;', 'style="width: 100%; height: 236px; object-fit: cover;')
 
 # ---------- San Silvestre ----------
-rep('<section id="comunidad" style="padding: 44px 20px 0;', '<section id="comunidad" style="padding: 96px 40px 0;')
-rep('<article style="margin-top: 22px; width: 100%; box-sizing: border-box; padding: 10px; background: var(--ac-white); box-shadow: var(--shadow-lg); transform: rotate(-1.5deg)">',
-    '<article style="margin-top: 28px; width: 780px; box-sizing: border-box; padding: 12px; background: var(--ac-white); box-shadow: var(--shadow-lg); transform: rotate(-1.2deg)">')
-rep('padding: 26px 18px 0; display: flex; flex-direction: column; gap: 8px; min-height: 215px; box-sizing: border-box">', 'padding: 36px 32px 0; display: flex; flex-direction: column; gap: 10px; min-height: 270px; box-sizing: border-box">')
-rep('font-weight: 600; font-size: 34px; line-height: 34px; letter-spacing: -0.02em; text-transform: uppercase">San Silvestre del Caribe', 'font-weight: 600; font-size: 56px; line-height: 56px; letter-spacing: -0.02em; text-transform: uppercase">San Silvestre del Caribe')
-rep('<div style="font-weight: 600; font-size: 17px; line-height: 22px">Dom 27 de diciembre', '<div style="font-weight: 600; font-size: 21px; line-height: 28px">Dom 27 de diciembre')
-rep('<div style="margin: auto -18px 0; background: #14009A; color: var(--ac-white); padding: 14px 18px;', '<div style="margin: auto -32px 0; background: #14009A; color: var(--ac-white); padding: 16px 32px;')
+if 'También corremos' in s:
+    rep('<section id="comunidad" style="padding: 44px 20px 0;', '<section id="comunidad" style="padding: 96px 40px 0;')
+    rep('<article style="margin-top: 22px; width: 100%; box-sizing: border-box; padding: 10px; background: var(--ac-white); box-shadow: var(--shadow-lg); transform: rotate(-1.5deg)">',
+        '<article style="margin-top: 28px; width: 780px; box-sizing: border-box; padding: 12px; background: var(--ac-white); box-shadow: var(--shadow-lg); transform: rotate(-1.2deg)">')
+    rep('padding: 26px 18px 0; display: flex; flex-direction: column; gap: 8px; min-height: 215px; box-sizing: border-box">', 'padding: 36px 32px 0; display: flex; flex-direction: column; gap: 10px; min-height: 270px; box-sizing: border-box">')
+    rep('font-weight: 600; font-size: 34px; line-height: 34px; letter-spacing: -0.02em; text-transform: uppercase">San Silvestre del Caribe', 'font-weight: 600; font-size: 56px; line-height: 56px; letter-spacing: -0.02em; text-transform: uppercase">San Silvestre del Caribe')
+    rep('<div style="font-weight: 600; font-size: 17px; line-height: 22px">Dom 27 de diciembre', '<div style="font-weight: 600; font-size: 21px; line-height: 28px">Dom 27 de diciembre')
+    rep('<div style="margin: auto -18px 0; background: #14009A; color: var(--ac-white); padding: 14px 18px;', '<div style="margin: auto -32px 0; background: #14009A; color: var(--ac-white); padding: 16px 32px;')
+else:
+    rep('<section id="comunidad" style="padding: 36px 12px 0">', '<section id="comunidad" style="padding: 72px 40px 0; display: flex; justify-content: center">')
+    rep('<article data-race-card="1" style="position: relative;', '<article data-race-card="1" style="width: 900px; position: relative;')
+    rep('padding: 22px 18px 26px; display: flex; flex-direction: column">', 'padding: 44px 48px 44px; display: grid; grid-template-columns: 1fr 260px; column-gap: 40px; align-content: start">')
+    rep('<div aria-hidden="true" style="position: relative; align-self: center; margin-top: 20px; width: 236px;', '<div aria-hidden="true" style="position: relative; grid-column: 2; grid-row: 1 / span 3; align-self: center; margin-top: 0; width: 256px;')
+    rep('font-weight: 700; font-size: 40px; line-height: 38px; letter-spacing: -0.02em; text-transform: uppercase">San Silvestre', 'font-weight: 700; font-size: 64px; line-height: 60px; letter-spacing: -0.02em; text-transform: uppercase">San Silvestre')
+    rep('<div style="align-self: flex-start; padding: 5px 9px; background: #14009A;', '<div style="justify-self: start; align-self: flex-start; padding: 5px 9px; background: #14009A;')
+    rep('<div style="padding: 4px 18px 0; display: flex; flex-direction: column">', '<div style="padding: 4px 48px 0; display: flex; flex-direction: column">')
 
 # ---------- Empresas: foto grande y "Orden del día" superpuesta ----------
 i, j = sec('<section id="empresas"', '</section>')
