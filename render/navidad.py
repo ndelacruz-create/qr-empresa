@@ -53,9 +53,9 @@ SLEIGH=('<div aria-hidden="true" style="position: relative; height: 46px; margin
  # saco y Santa
  '<circle cx="14" cy="20" r="7" fill="#7A5236"/><path d="M11 13 q3 -3 6 0" stroke="'+GOLD+'" stroke-width="1.2" fill="none"/>'
  '<path d="M20 26 v-8 q0 -6 6 -6 q6 0 6 6 v8z" fill="'+RED+'"/><path d="M20 22 h12" stroke="'+CREAM+'" stroke-width="2"/>'
- '<circle cx="26" cy="9" r="3.6" fill="#F2C9A0"/><circle cx="24.7" cy="8.8" r="0.45" fill="#3A2418"/><circle cx="27.3" cy="8.8" r="0.45" fill="#3A2418"/><path d="M22.4 10.4 q3.6 6.2 7.2 0 z" fill="#FFFFFF"/>'
- '<path d="M22.6 5.2 C23 1 25.5 -2.2 29 -2.4 C31.6 -2.5 33.2 -0.6 33.6 2.4 L31.8 2.6 C31.4 1.2 30.6 0.4 29.6 0.6 C29.9 2.2 30 4 29.8 5.2 Z" fill="'+RED+'"/>'
- '<rect x="21.6" y="4.2" width="8.8" height="2.4" rx="1.3" fill="#FFFFFF"/><circle cx="33" cy="3.4" r="1.7" fill="#FFFFFF"/>'
+ '<circle cx="26" cy="9" r="3.6" fill="#F2C9A0"/><circle cx="28.1" cy="8.4" r="0.5" fill="#3A2418"/><circle cx="29.7" cy="9.9" r="0.9" fill="#E3A588"/><path d="M24.6 10.6 q1.2 6 5.6 -0.2 q-2.6 1.2 -5.6 0.2 z" fill="#FFFFFF"/>'
+ '<g transform="translate(52 0) scale(-1 1)"><path d="M22.6 5.2 C23 1 25.5 -2.2 29 -2.4 C31.6 -2.5 33.2 -0.6 33.6 2.4 L31.8 2.6 C31.4 1.2 30.6 0.4 29.6 0.6 C29.9 2.2 30 4 29.8 5.2 Z" fill="'+RED+'"/>'
+ '<rect x="21.6" y="4.2" width="8.8" height="2.4" rx="1.3" fill="#FFFFFF"/><circle cx="33" cy="3.4" r="1.7" fill="#FFFFFF"/></g>'
  # trineo
  '<path d="M8 24 h34 l-3 8 h-27 q-5 0 -4 -8z" fill="'+RED+'"/><path d="M12 28 h26" stroke="'+GOLD+'" stroke-width="1"/>'
  '<path d="M6 36 q1 2 6 2 h30 q5 0 6 -5" stroke="'+GOLD+'" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M15 32 v4 M36 32 v4" stroke="'+GOLD+'" stroke-width="1.4"/>'
