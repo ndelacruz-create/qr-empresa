@@ -35,7 +35,7 @@ def confrain():
         shp='<rect x="-3" y="-1.4" width="6" height="2.8" rx="0.7" fill="%s"/>'%cols[i%4] if i%3 else '<circle r="2.1" fill="%s"/>'%cols[i%4]
         out.append('<svg aria-hidden="true" width="10" height="10" viewBox="-5 -5 10 10" style="position: absolute; left: %d%%; top: -12px; overflow: visible; animation: acRain %.1fs %.2fs linear infinite; opacity: 0">%s</svg>'%(x,dur,dl,shp))
     return ''.join(out)
-SEALB=('<div aria-hidden="true" style="position: absolute; right: 8px; top: 118px; z-index: 1; width: 104px; height: 104px; transform: rotate(-6deg); filter: drop-shadow(0 3px 6px rgba(42,36,32,0.3))">'
+SEALB=('<div aria-hidden="true" style="position: absolute; left: 8px; top: 108px; z-index: 1; width: 104px; height: 104px; transform: rotate(6deg); filter: drop-shadow(0 3px 6px rgba(42,36,32,0.3))">'
  '<svg width="104" height="104" viewBox="0 0 104 104" style="display: block">'
  '<defs><path id="brSealRim" d="M52 52 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/></defs>'
  '<circle cx="52" cy="52" r="51" fill="'+TEAL+'"/><circle cx="52" cy="52" r="47.5" fill="none" stroke="'+GOLD+'" stroke-width="1"/><circle cx="52" cy="52" r="28.5" fill="none" stroke="'+GOLD+'" stroke-width="1"/>'
@@ -53,7 +53,7 @@ BR=('<sc-if value="{{showBrunch}}" hint-placeholder-val="{{true}}">\n'
 '<div style="position: relative; height: 176px; overflow: hidden; margin: 14px 14px 0; border: 1px solid '+GOLD+'"><img src="/_blob/913442a843da7607597400e3a1b5a982" alt="Brindis con cócteles junto a la piscina" style="width: 100%; height: 100%; object-fit: cover; display: block; animation: acZoom 10s ease-out both">'+confrain()+'</div>\n'+SEALB+'\n'
 '<div style="flex-grow: 1; padding: 18px 18px 18px; display: flex; flex-direction: column">\n'
 '<div style="align-self: flex-start; background: '+TEAL+'; color: '+CRM+'; padding: 7px 10px; font-family: var(--font-display); font-size: 9.5px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; white-space: nowrap">Vie 1 ene · 1:00 pm · {{ cdBrunch }}</div>\n'
-'<h3 style="margin: 14px 0 0; display: flex; flex-direction: column; max-width: calc(100% - 84px)"><span style="font-family: \'Cormorant Garamond\', serif; font-weight: 500; font-size: 26px; line-height: 28px; color: '+INK+'">Brunch de Bienvenida</span><span style="font-family: \'Cormorant Garamond\', serif; font-style: italic; font-weight: 600; font-size: 44px; line-height: 46px; color: '+GOLD+'">al año 2027</span></h3>\n'
+'<h3 style="margin: 14px 0 0; display: flex; flex-direction: column"><span style="font-family: \'Cormorant Garamond\', serif; font-weight: 500; font-size: 26px; line-height: 28px; color: '+INK+'">Brunch de Bienvenida</span><span style="font-family: \'Cormorant Garamond\', serif; font-style: italic; font-weight: 600; font-size: 44px; line-height: 46px; color: '+GOLD+'">al año 2027</span></h3>\n'
 '<p style="margin: 10px 0 0; font-family: \'Cormorant Garamond\', serif; font-style: italic; font-size: 20px; line-height: 25px; color: '+INK+'">Comienza el año celebrando en familia.</p>\n'+LIST+'\n'
 '<div style="margin-top: 16px; padding: 12px 14px; background: #F1EADB; display: flex; flex-direction: column; gap: 4px">'+PRICE('Adultos','US$50 + imp.')+PRICE('Niños 6 a 15','US$25 + imp.')+PRICE('Infantes 0 a 6','Gratis')+
 '<div style="margin-top: 4px; font-size: 12px; line-height: 17px; color: #5A4E44">Precio por persona. Impuestos del 28%.</div></div>\n'
