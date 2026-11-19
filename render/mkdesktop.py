@@ -93,6 +93,7 @@ r1('<div style="position: relative; height: 176px; overflow: hidden; margin: 14p
 r1('style="width: 100%; height: 100%; object-fit: cover; display: block; animation: acZoom', 'style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; display: block; animation: acZoom')
 r1('right: 8px; top: 118px; z-index: 1; width: 104px; height: 104px;', 'right: auto; left: calc(50% - 96px); top: 40px; z-index: 1; width: 136px; height: 136px;')
 r1('<svg width="104" height="104" viewBox="0 0 104 104"', '<svg width="136" height="136" viewBox="0 0 104 104"')
+r1('height: 46px; margin: 20px -18px -18px;', 'height: 46px; margin: auto -44px -30px;', opt=True)
 r1('<div style="flex-grow: 1; padding: 18px 18px 18px; display: flex; flex-direction: column">', '<div style="flex-grow: 1; padding: 34px 44px 30px; display: flex; flex-direction: column">')
 r1('style="position: relative; margin-top: 34px; border: 1px solid var(--ac-dark-beige); padding: 0 16px 44px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-dark-beige); padding: 0 16px 44px;', opt=True)
 r1('style="position: relative; margin-top: 18px; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', opt=True)

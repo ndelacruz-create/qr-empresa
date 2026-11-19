@@ -48,6 +48,21 @@ PRICE=lambda a,b:('<div style="display: flex; align-items: baseline; gap: 8px"><
 CAL=('https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Cena+de+Nochebuena+en+AC+Hotel+Punta+Cana&amp;dates=20261224T223000Z/20261225T023000Z'
      '&amp;location=AC+Hotel+Punta+Cana,+Av.+Barcel%C3%B3+Km+9,+B%C3%A1varo&amp;details=Buffet+navide%C3%B1o,+DJs+y+vino+por+mesa.+Reserva+por+WhatsApp.')
 BTN='display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none'
+SLEIGH=('<div aria-hidden="true" style="position: relative; height: 46px; margin: 20px -18px -18px; overflow: hidden; border-bottom: 1px dotted '+GREEN+'; pointer-events: none">'
+ '<span style="position: absolute; left: 0; bottom: 2px; animation: acSleigh 13s linear infinite"><svg width="136" height="40" viewBox="0 0 136 40" style="display: block; overflow: visible; animation: acHop 0.7s ease-in-out infinite alternate">'
+ # saco y Santa
+ '<circle cx="14" cy="20" r="7" fill="#7A5236"/><path d="M11 13 q3 -3 6 0" stroke="'+GOLD+'" stroke-width="1.2" fill="none"/>'
+ '<path d="M20 26 v-8 q0 -6 6 -6 q6 0 6 6 v8z" fill="'+RED+'"/><path d="M20 22 h12" stroke="'+CREAM+'" stroke-width="2"/>'
+ '<circle cx="26" cy="9" r="3.6" fill="#F2C9A0"/><path d="M22.4 9.5 q3.6 7 7.2 0 z" fill="#FFFFFF"/>'
+ '<path d="M22.2 7.5 q3.8 -9 9 -4 l-2.4 2.2 q-2.4 -2.6 -6.6 1.8z" fill="'+RED+'"/><path d="M22 7.6 h7.8" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/><circle cx="31.6" cy="3.6" r="1.6" fill="#FFFFFF"/>'
+ # trineo
+ '<path d="M8 24 h34 l-3 8 h-27 q-5 0 -4 -8z" fill="'+RED+'"/><path d="M12 28 h26" stroke="'+GOLD+'" stroke-width="1"/>'
+ '<path d="M6 36 q1 2 6 2 h30 q5 0 6 -5" stroke="'+GOLD+'" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M15 32 v4 M36 32 v4" stroke="'+GOLD+'" stroke-width="1.4"/>'
+ # riendas
+ '<path d="M40 25 q20 -2 40 -6 q14 -2 30 -4" stroke="'+GOLD+'" stroke-width="0.8" fill="none"/>'
+ # renos
+ + ''.join('<g transform="translate(%d %d)"><ellipse cx="0" cy="0" rx="8" ry="4" fill="#7A5236"/><path d="M-5 3 l-2 8 M-2 4 l0 8 M3 4 l1 8 M6 3 l3 7" stroke="#7A5236" stroke-width="1.6" stroke-linecap="round"/><path d="M6 -2 l4 -6" stroke="#7A5236" stroke-width="2.4" stroke-linecap="round"/><circle cx="11" cy="-9" r="2.6" fill="#7A5236"/><path d="M10 -11 l-2 -5 M10 -11 l2 -5 M9 -14 l-3 -1 M11 -14 l3 -1" stroke="#7A5236" stroke-width="0.9" stroke-linecap="round"/><circle cx="13.4" cy="-8.4" r="%s" fill="%s"/></g>' % (x, y, r, c) for x, y, r, c in ((84, 22, '1', '#3A2418'), (112, 18, '1.6', RED)))
+ + '</svg></span></div>\n')
 card=('<sc-if value="{{showNoche}}" hint-placeholder-val="{{true}}">\n'
 '<article data-fest-card="1" style="position: relative; margin-top: 36px; background: '+CREAM+'; border: 2px solid '+GREEN+'; color: '+INK+'; overflow: hidden; display: flex; flex-direction: column; animation: acRise 0.9s ease-out both">\n'+STRIP+'\n'
 '<div style="position: relative; height: 176px; overflow: hidden; margin: 14px 14px 0; border: 1px solid '+GREEN+'"><img src="/_blob/b1aef0b756c24e6b2189b008c2b02ba7" alt="Árbol de Navidad dorado en el lobby del hotel" style="width: 100%; height: 100%; object-fit: cover; display: block; animation: acZoom 10s ease-out both"></div>\n'+SEAL+'\n'
@@ -61,7 +76,7 @@ card=('<sc-if value="{{showNoche}}" hint-placeholder-val="{{true}}">\n'
 '<div style="margin-top: 4px; font-size: 12px; line-height: 17px; color: #46524A">Precios + 28% de impuestos.</div></div>\n'
 '<a href="https://wa.link/hwnaf7" target="_blank" rel="noopener noreferrer" style="margin-top: 18px; min-height: 52px; background: '+RED+'; color: '+CREAM+'; font-size: 12px; '+BTN+'">Escríbenos para asistir</a>\n'
 '<a href="'+CAL+'" target="_blank" rel="noopener noreferrer" style="margin-top: 10px; min-height: 44px; border: 1px solid '+INK+'; color: '+INK+'; font-size: 11px; '+BTN+'">Guárdalo en tu calendario</a>\n'
-'</div>\n'+STRIP.replace('"></div>','; transform: scaleY(-1)"></div>')+'\n</article>\n</sc-if>')
++SLEIGH+'</div>\n'+STRIP.replace('"></div>','; transform: scaleY(-1)"></div>')+'\n</article>\n</sc-if>')
 s=s[:i]+card+s[j:]
 assert 'Thanksgiving' not in s, s.count('Thanksgiving')
 s=s.replace('<title>Landing AC Hotel Punta Cana, celular, versión 2</title>','<title>Landing AC Hotel Punta Cana, celular, versión 2</title>',1)
