@@ -28,6 +28,7 @@ Artifact de Claude Design: https://claude.ai/artifact/JKi1TuFKVfD1dzLGE4Jryj
 - `VERSION` (variable de entorno) elige qué archivos usar: sin valor → `V2.dc.html`/`Desktop.dc.html` (Thanksgiving, 23–26 nov);
   `VERSION=carrera` → `V2-carrera.dc.html`/`Desktop-carrera.dc.html` (San Silvestre destacada bajo la portada, desde el 25 dic).
   `VERSION=findeano` → `V2-findeano.dc.html`/`Desktop-findeano.dc.html` (Gran Cena de Fin de Año en la portada, desde el 28 dic).
+  `VERSION=brunch` → `V2-brunch.dc.html`/`Desktop-brunch.dc.html` (Brunch de Bienvenida 2027 destacado, 1 de enero).
   `VERSION=navidad` → `V2-navidad.dc.html`/`Desktop-navidad.dc.html` (Nochebuena destacada, desde el 27 nov).
 - Ejemplo: `cd export && VERSION=navidad python3 gen2.py`. Para el escritorio: `cd render && VERSION=navidad python3 mkdesktop.py <alto>`.
 - gen2.py se niega a generar si quedan datos entre corchetes sin completar ([Qué incluye], [Precio], [fecha]).

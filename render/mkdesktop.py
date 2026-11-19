@@ -78,7 +78,7 @@ s = s[:i] + d + s[j:]
 i, j = sec('<section id="temporada"', '</section>')
 d = s[i:j]
 d = d.replace('padding: 44px 20px 0; display: flex; flex-direction: column">', 'padding: 96px 40px 0; display: flex; flex-direction: column">')
-a = min(d.index(x) for x in ('<sc-if value="{{showThanks}}"', '<sc-if value="{{showNoche}}"', '<sc-if value="{{showFin}}"') if x in d); b = d.index('<sc-if value="{{noSeason}}"')
+a = min(d.index(x) for x in ('<sc-if value="{{showThanks}}"', '<sc-if value="{{showNoche}}"', '<sc-if value="{{showFin}}"', '<sc-if value="{{showBrunch}}"') if x in d); b = d.index('<sc-if value="{{noSeason}}"')
 grid = d[a:b]
 SMALL = 'flex: 1 1 320px; max-width: 354px; box-sizing: border-box; '
 n = 0
