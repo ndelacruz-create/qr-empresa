@@ -442,7 +442,7 @@ var agendaList = [
 ].filter(function (e) { return left(e.y, e.m, e.d) >= 0; });
 var nx = agendaList[0];
 var isFest = !!nx && nx.name === 'Cena de Thanksgiving';
-var agenda = nx ? { name: nx.name, name1: isFest ? 'Cena de ' : nx.name, name2: isFest ? 'Thanksgiving' : '', href: nx.href, when: fecha(nx.y, nx.m, nx.d), fest: isFest, pad: isFest ? 36 : 18, padB: isFest ? 24 : 16, bg: isFest ? '#FBF3E4' : '#FBF8F4', ink: isFest ? '#3B2418' : '#1C1C1C', border: isFest ? '2px solid #3B2418' : '0', eyebrow: isFest ? '#7A2833' : '#80694C', accent: '#C0612B', style2: 'italic' } : { name: '', name1: '', name2: '', href: '#temporada', when: '', fest: false, pad: 18, padB: 16, bg: '#FBF8F4', ink: '#1C1C1C', border: '0', eyebrow: '#80694C', accent: '#C0612B', style2: 'italic' };
+var agenda = nx ? { name: nx.name, name1: isFest ? 'Cena de ' : nx.name, name2: isFest ? 'Thanksgiving' : '', href: nx.href, when: fecha(nx.y, nx.m, nx.d), fest: isFest, festName: isFest ? nx.name : '', pad: isFest ? 36 : 18, padB: isFest ? 24 : 16, bg: isFest ? '#FBF3E4' : '#FBF8F4', ink: isFest ? '#3B2418' : '#1C1C1C', border: isFest ? '2px solid #3B2418' : '0', eyebrow: isFest ? '#7A2833' : '#80694C', accent: '#C0612B', style2: 'italic' } : { name: '', name1: '', name2: '', href: '#temporada', when: '', fest: false, festName: '', pad: 18, padB: 16, bg: '#FBF8F4', ink: '#1C1C1C', border: '0', eyebrow: '#80694C', accent: '#C0612B', style2: 'italic' };
 function lastSunday(y, m0) { var t = new Date(Date.UTC(y, m0 + 1, 0)); t.setUTCDate(t.getUTCDate() - t.getUTCDay()); return t; }
 var ls = lastSunday(rd.year, rd.month - 1);
 if (ls.getTime() < today) ls = lastSunday(rd.year, rd.month);

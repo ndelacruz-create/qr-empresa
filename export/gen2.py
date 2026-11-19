@@ -96,16 +96,19 @@ def build(fname):
         '<sc-if value="{{it.hasInside}}" hint-placeholder-val="{{false}}">\n<div id="place-{{it.pid}}" hidden style="padding: 0 2px 16px;')
 
     # Agenda y fechas
-    rep('href="{{agenda.href}}"', 'href="{{agenda.href}}" data-agenda-link')
+    rep('href="{{agenda.href}}"', 'href="{{agenda.href}}" data-agenda-link data-fest-name="{{agenda.festName}}"')
     rep('color: {{agenda.eyebrow}}">Próximo', 'color: {{agenda.eyebrow}}" data-agenda-eyebrow>Próximo')
     rep('{{agenda.when}}', '<span data-agenda="when">{{agenda.when}}</span>')
     rep('{{agenda.name1}}', '<span data-agenda="name1">{{agenda.name1}}</span>')
     rep('{{agenda.name2}}', '<span data-agenda="name2">{{agenda.name2}}</span>')
-    rep('{{ cdThanks }}', '<span data-countdown="2026-11-26"></span>')
+    for _k, _d in (('cdThanks', '2026-11-26'), ('cdNoche', '2026-12-24')):
+        if '{{ %s }}' % _k in body: rep('{{ %s }}' % _k, '<span data-countdown="%s"></span>' % _d)
     rep('{{nextLastSunday}}', '<span data-lastsunday>{{nextLastSunday}}</span>')
 
     # Borradores fuera del público
     assert '[HORA]' not in body and '#inscripcion' not in body, fname
+    _pend = [x for x in ('[Qué incluye]', '[Precio]', '[fecha]', '[por confirmar') if x in body]
+    assert not _pend, ('Faltan datos por completar', fname, _pend)
 
     # <main>
     i = body.index('<sc-if value="{{hasAgenda}}"'); j = body.index('<footer')
@@ -151,8 +154,11 @@ def build(fname):
     assert not left, (fname, left[:5])
     return html, style
 
-mob, style = build('V2.dc.html')
-desk, _ = build('Desktop.dc.html')
+# Versión a publicar: VERSION=navidad usa V2-navidad / Desktop-navidad
+_v = os.environ.get('VERSION', '')
+_sfx = ('-' + _v) if _v else ''
+mob, style = build('V2%s.dc.html' % _sfx)
+desk, _ = build('Desktop%s.dc.html' % _sfx)
 
 # ids únicos en la versión de computadora
 ids = set(re.findall(r'\sid="([^"]+)"', desk))
@@ -288,9 +294,10 @@ def _nombre(pos, end, url, txt):
         st, sec = secs[-1]
         if before.count('</section>', st) > before.count('<section', st + 1): sec = 'pie'
     if 'privacy' in url: return None
-    if 'calendar.google' in url: return 'thanksgiving-calendario'
+    if 'calendar.google' in url: return ('nochebuena' if 'Nochebuena' in url else 'thanksgiving') + '-calendario'
     if 'rockthesport' in url: return 'san-silvestre-inscripcion'
     if 'google.com/maps' in url: return 'mapa-' + ('alrededores' if sec == 'llegar' else 'direccion')
+    if sec == 'temporada' and 'take out' in txt.lower(): return 'whatsapp-nochebuena-takeout'
     if sec == 'temporada':
         ev, best = 'evento', -1
         for k, n in EVENTOS:

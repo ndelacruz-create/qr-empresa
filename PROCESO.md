@@ -23,3 +23,9 @@ Artifact de Claude Design: https://claude.ai/artifact/JKi1TuFKVfD1dzLGE4Jryj
 - Español neutro en los textos. noindex se mantiene. No usar dominio acpuntacana.
 - Los wa.link se conservan. Cabeceras de seguridad en `export/vercel.json` (CSP sin inline scripts).
 - Los eventos con fecha se ocultan solos al día siguiente (data-until); no hace falta redesplegar por eso.
+
+## Versiones por temporada
+- `VERSION` (variable de entorno) elige qué archivos usar: sin valor → `V2.dc.html`/`Desktop.dc.html` (Thanksgiving, 23–26 nov);
+  `VERSION=navidad` → `V2-navidad.dc.html`/`Desktop-navidad.dc.html` (Nochebuena destacada + take out, desde el 27 nov).
+- Ejemplo: `cd export && VERSION=navidad python3 gen2.py`. Para el escritorio: `cd render && VERSION=navidad python3 mkdesktop.py <alto>`.
+- gen2.py se niega a generar si quedan datos entre corchetes sin completar ([Qué incluye], [Precio], [fecha]).

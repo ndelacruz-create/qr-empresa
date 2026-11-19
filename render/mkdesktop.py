@@ -2,7 +2,8 @@
 """Deriva Desktop.dc.html (1280 px) a partir de V2.dc.html. Re-ejecutable cuando cambie V2."""
 import re, sys, os
 S = os.environ.get('KIT') or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-s = open(S + '/canvas/project/V2.dc.html', encoding='utf-8').read()
+_v = os.environ.get('VERSION', ''); _sfx = ('-' + _v) if _v else ''
+s = open(S + '/canvas/project/V2%s.dc.html' % _sfx, encoding='utf-8').read()
 H = int(sys.argv[1]) if len(sys.argv) > 1 else 5200
 
 def rep(a, b, n=1):
@@ -77,12 +78,13 @@ s = s[:i] + d + s[j:]
 i, j = sec('<section id="temporada"', '</section>')
 d = s[i:j]
 d = d.replace('padding: 44px 20px 0; display: flex; flex-direction: column">', 'padding: 96px 40px 0; display: flex; flex-direction: column">')
-a = d.index('<sc-if value="{{showThanks}}"'); b = d.index('<sc-if value="{{noSeason}}"')
+a = min(d.index(x) for x in ('<sc-if value="{{showThanks}}"', '<sc-if value="{{showNoche}}"') if x in d); b = d.index('<sc-if value="{{noSeason}}"')
 grid = d[a:b]
 SMALL = 'flex: 1 1 320px; max-width: 354px; box-sizing: border-box; '
 n = 0
-def r1(a_, b_, k=1):
+def r1(a_, b_, k=1, opt=False):
     global grid, n
+    if opt and a_ not in grid: return
     assert grid.count(a_) == k, (a_[:70], grid.count(a_))
     grid = grid.replace(a_, b_); n += 1
 r1('<article data-fest-card="1" style="position: relative; margin-top: 36px;', '<article data-fest-card="1" style="flex: 1 1 100%; max-width: 1118px; box-sizing: border-box; display: grid !important; grid-template-columns: 1fr 1fr; position: relative; margin-top: 0;')
@@ -92,8 +94,9 @@ r1('style="width: 100%; height: 100%; object-fit: cover; display: block; animati
 r1('right: 8px; top: 118px; z-index: 1; width: 104px; height: 104px;', 'right: auto; left: calc(50% - 96px); top: 40px; z-index: 1; width: 136px; height: 136px;')
 r1('<svg width="104" height="104" viewBox="0 0 104 104"', '<svg width="136" height="136" viewBox="0 0 104 104"')
 r1('<div style="flex-grow: 1; padding: 18px 18px 18px; display: flex; flex-direction: column">', '<div style="flex-grow: 1; padding: 34px 44px 30px; display: flex; flex-direction: column">')
-r1('style="position: relative; margin-top: 34px; border: 1px solid var(--ac-dark-beige); padding: 0 16px 44px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-dark-beige); padding: 0 16px 44px;')
-r1('style="position: relative; margin-top: 18px; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;')
+r1('style="position: relative; margin-top: 34px; border: 1px solid var(--ac-dark-beige); padding: 0 16px 44px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-dark-beige); padding: 0 16px 44px;', opt=True)
+r1('style="position: relative; margin-top: 18px; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', opt=True)
+r1('style="position: relative; margin-top: 34px; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', 'style="' + SMALL + 'position: relative; margin-top: 0; border: 1px solid var(--ac-near-black); background: var(--ac-near-black); padding: 0 16px 18px;', opt=True)
 r1('style="margin-top: 18px; border: 1px solid var(--ac-dark-beige); padding: 0 16px 18px;', 'style="' + SMALL + 'margin-top: 0; border: 1px solid var(--ac-dark-beige); padding: 0 16px 18px;')
 d = d[:a] + '<div style="margin-top: 52px; display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 44px 28px">\n' + grid + '</div>\n' + d[b:]
 s = s[:i] + d + s[j:]
@@ -168,5 +171,5 @@ rep('padding: 24px 20px 18px; display: flex; flex-direction: column; align-items
 rep('gap: 18px; width: 100%; text-align: left">', 'gap: 56px; width: 640px; text-align: left">')
 rep("font-style: italic; font-size: 22px; line-height: 28px\">Te esperamos", "font-style: italic; font-size: 28px; line-height: 34px\">Te esperamos")
 
-open(S + '/canvas/project/Desktop.dc.html', 'w', encoding='utf-8').write(s)
+open(S + '/canvas/project/Desktop%s.dc.html' % _sfx, 'w', encoding='utf-8').write(s)
 print('ok', len(s))
