@@ -51,7 +51,7 @@ nav[aria-label="Ir a una sección"] a:active{transform:translateY(2px);box-shado
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
 @keyframes acSantaFly{0%{transform:translate(-150px,0) rotate(0)}38%{transform:translate(calc(48cqw - 68px),0) rotate(0)}50%{transform:translate(calc(68cqw - 68px),-26px) rotate(-10deg)}68%{transform:translate(calc(100cqw + 30px),-240px) rotate(-16deg)}100%{transform:translate(calc(100cqw + 30px),-240px) rotate(-16deg)}}@keyframes acRoute{0%{transform:scaleX(0);opacity:1}80%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}@keyframes acRouteDot{0%{transform:translateX(0);opacity:1}80%{transform:translateX(calc(100cqw - 12px));opacity:1}100%{transform:translateX(calc(100cqw - 12px));opacity:0}}@keyframes acBib{from{transform:rotate(-3deg)}to{transform:rotate(-1deg)}}@keyframes acTwinkle{0%,100%{opacity:0.15;transform:scale(0.6)}50%{opacity:1;transform:scale(1)}}@keyframes acFw{0%,18%{opacity:0;transform:scale(0.15)}24%{opacity:1}55%{opacity:1;transform:scale(1)}78%,100%{opacity:0;transform:scale(1.12)}}@keyframes acFwTrail{0%{opacity:0;transform:translateY(0)}4%{opacity:1}18%{opacity:0.9;transform:translateY(-70px)}22%,100%{opacity:0;transform:translateY(-74px)}}</style>
 </helmet>
-<div style="width: 100%; max-width: 390px; margin: 0 auto; min-height: 8009px; box-sizing: border-box; display: flex; flex-direction: column; background: var(--ac-neutral-beige); color: var(--text-primary); font-family: var(--font-body); font-size: 15px; line-height: 23px; overflow: hidden">
+<div style="width: 100%; max-width: 390px; margin: 0 auto; min-height: 7988px; box-sizing: border-box; display: flex; flex-direction: column; background: var(--ac-neutral-beige); color: var(--text-primary); font-family: var(--font-body); font-size: 15px; line-height: 23px; overflow: hidden">
 
 <section style="position: relative; height: 440px; overflow: hidden; color: var(--ac-white); display: flex; flex-direction: column; align-items: center">
 <img src="/_blob/cd3223e51e4f9c01af4b9797a88786f6" alt="Piscina de AC Hotel Punta Cana con tumbonas en el agua, palmeras y la fachada del hotel" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: 38% 55%; animation: acZoom 12s ease-out both">
@@ -347,46 +347,25 @@ var zid = st.zona || 'compras';
 var openId = st.place || '';
 var zonasData = [
 { id: 'compras', label: 'Compras', title: 'Plazas y supermercados', items: [
- { id: 'sjsc', name: 'San Juan Shopping Center', detail: '2 min a pie', kind: 'Centro comercial con tiendas, restaurantes y servicios', groups: [
-  { label: 'Tiendas', text: 'IKEA · Adidas · Puma · Levi’s · Crocs · Payless · Joyerías y souvenirs' },
-  { label: 'Para comer', text: 'Burger King · Pizza Hut · Taco Bell · Tienda gourmet española' },
-  { label: 'Supermercado', text: 'Sirena Market' },
-  { label: 'Servicios', text: 'Farmacia Carol · Banco Promerica · Cajeros · Claro · Altice · Viva' } ] },
- { id: 'dtmall', name: 'Downtown Mall', detail: '', kind: 'Centro comercial de tres niveles', groups: [
-  { label: 'Supermercado', text: 'Jumbo, con farmacia' },
-  { label: 'Para comer', text: 'Food court y cafetería' },
-  { label: 'Servicios', text: 'Bancos y cajeros · Farmacia Carol · Altice' } ] },
- { id: 'bravo', name: 'Supermercado Bravo', detail: '', kind: 'Supermercado frente a Downtown, en Av. Barceló', groups: [
-  { label: 'En el mismo edificio', text: 'Smart Fit, gimnasio' } ] } ] },
+ { id: 'sjsc', name: 'San Juan Shopping Center', detail: '2 min a pie', kind: 'Centro comercial con tiendas, restaurantes y servicios' },
+ { id: 'dtmall', name: 'Downtown Mall', detail: '', kind: 'Centro comercial' },
+ { id: 'bravo', name: 'Supermercado Bravo', detail: '', kind: 'Supermercado' } ] },
 { id: 'comer', label: 'Comer y beber', title: 'Restaurantes', items: [
- { id: 'psj', name: 'Plaza Paseo San Juan', detail: 'al lado', kind: 'Plaza gastronómica junto al hotel', groups: [
-  { label: 'Restaurantes', text: 'Noah Restaurant & Lounge · Cabanna Restaurant & Cocktail Club · Chinois Restaurante' } ] },
- { id: 'dtfood', name: 'Downtown Punta Cana', detail: '', kind: 'Restaurantes y experiencias gastronómicas', groups: [
-  { label: 'Restaurantes', text: 'Hard Rock Café · Make’s · La Casita de Yeya · Burlao · Mr. Mike’s' },
-  { label: 'Experiencia', text: 'Dinner in the Sky, cena a 45 m de altura' } ] } ] },
+ { id: 'psj', name: 'Plaza Paseo San Juan', detail: '', kind: 'Plaza gastronómica' },
+ { id: 'dtfood', name: 'Downtown Punta Cana', detail: '', kind: 'Restaurantes' } ] },
 { id: 'noche', label: 'Noche y shows', title: 'Para salir de noche', items: [
- { id: 'cb', name: 'Coco Bongo', detail: 'Downtown', kind: 'Show, acróbatas y discoteca' },
- { id: 'dtbar', name: 'Bares de Downtown', detail: 'Downtown', kind: 'Coctelería, cigarros y música', groups: [
-  { label: 'Bares', text: 'Mixology Bar Lab · Havana Cigar Lounge & Bar · MP Club · Pal Patio' },
-  { label: 'Juego', text: 'Slots' } ] } ] },
+ { id: 'cb', name: 'Coco Bongo', detail: 'Downtown', kind: 'Show y discoteca' },
+ { id: 'dtbar', name: 'Bares de Downtown', detail: 'Downtown', kind: 'Bares y coctelería' } ] },
 { id: 'ocio', label: 'Ocio y deporte', title: 'Cultura, aventura y deporte', items: [
- { id: 'cine', name: 'Caribbean Cinemas', detail: '2 min a pie', kind: 'Cine en San Juan Shopping Center' },
- { id: 'dom', name: 'Dominicania', detail: 'Downtown', kind: 'Parque cultural inmersivo, visita de 4 a 5 horas', groups: [
-  { label: 'Experiencias', text: 'Cine 4D sobre los taínos · Catas de ron, cacao y café · Mina de larimar · Taller de tabaco · Shows folclóricos' } ] },
- { id: 'clp', name: 'Caribbean Lake Park', detail: 'Downtown', kind: 'Parque acuático con lagos y tirolinas', groups: [
-  { label: 'Actividades', text: 'Wakeboard · Kneeboard · Paddle board · Tirolinas · Muro de escalada' },
-  { label: 'Comer y salir', text: 'Restaurante Batú · Discoteca Maroca' } ] },
- { id: 'cdep', name: 'Ciudad Deportiva', detail: 'Downtown', kind: 'Fútbol y pádel', groups: [
-  { label: 'Fútbol', text: 'Canchas de césped sintético con certificación FIFA' },
-  { label: 'Pádel', text: 'Downtown Padel, 4 canchas abiertas al público' } ] },
- { id: 'dome', name: 'The Dome', detail: 'próximamente', kind: 'Centro de pádel premium en Downtown', groups: [
-  { label: 'Pádel', text: '7 pistas' },
-  { label: 'Además', text: 'Zona fitness · Wellness' } ] },
- { id: 'smart', name: 'Smart Fit', detail: 'frente a Downtown', kind: 'Gimnasio en el edificio del Supermercado Bravo' } ] },
+ { id: 'cine', name: 'Caribbean Cinemas', detail: '', kind: 'Cine en San Juan Shopping Center' },
+ { id: 'dom', name: 'Dominicania', detail: 'Downtown', kind: 'Parque cultural' },
+ { id: 'clp', name: 'Caribbean Lake Park', detail: 'Downtown', kind: 'Parque acuático' },
+ { id: 'cdep', name: 'Ciudad Deportiva', detail: '', kind: 'Fútbol y pádel' },
+ { id: 'smart', name: 'Smart Fit', detail: '', kind: 'Gimnasio' } ] },
 { id: 'playas', label: 'Playas', title: 'Playas cercanas', items: [
- { id: 'bibi', name: 'Playa Bibijagua', detail: 'En carro', kind: 'Playa de Bávaro con restaurantes y mercado' },
- { id: 'bav', name: 'Playa Bávaro', detail: 'En carro', kind: 'La playa más conocida de la zona' },
- { id: 'cor', name: 'Playa Los Corales', detail: 'En carro', kind: 'Playa con bares y restaurantes frente al mar' } ] }
+ { id: 'bibi', name: 'Playa Bibijagua', detail: 'En carro', kind: 'Playa en Bávaro' },
+ { id: 'bav', name: 'Playa Bávaro', detail: 'En carro', kind: 'Playa en Bávaro' },
+ { id: 'cor', name: 'Playa Los Corales', detail: 'En carro', kind: 'Playa en Bávaro' } ] }
 ];
 var zonaTabs = zonasData.map(function (z) {
 var on = z.id === zid;
