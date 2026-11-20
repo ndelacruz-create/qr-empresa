@@ -39,7 +39,7 @@ SEALB=('<div aria-hidden="true" style="position: absolute; left: 8px; top: 108px
  '<svg width="104" height="104" viewBox="0 0 104 104" style="display: block">'
  '<defs><path id="brSealRim" d="M52 52 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/></defs>'
  '<circle cx="52" cy="52" r="51" fill="'+TEAL+'"/><circle cx="52" cy="52" r="47.5" fill="none" stroke="'+GOLD+'" stroke-width="1"/><circle cx="52" cy="52" r="28.5" fill="none" stroke="'+GOLD+'" stroke-width="1"/>'
- '<g style="transform-box: view-box; transform-origin: 52px 52px; animation: acSpin 36s linear infinite"><text fill="'+CRM+'" style="font-family: Montserrat, sans-serif; font-size: 8.4px; font-weight: 600; letter-spacing: 0.16em"><textPath href="#brSealRim" textLength="232" lengthAdjust="spacing">DJ EN VIVO ✦ BUFFET ✦ OPEN BAR ✦</textPath></text></g>'
+ '<g style="transform-box: view-box; transform-origin: 52px 52px; animation: acSpin 36s linear infinite"><text fill="'+CRM+'" style="font-family: Montserrat, sans-serif; font-size: 8.4px; font-weight: 600; letter-spacing: 0.16em"><textPath href="#brSealRim" textLength="232" lengthAdjust="spacing">DJ EN VIVO ✦ BUFFET ✦ BAR DE CERVEZAS ✦</textPath></text></g>'
  '<text x="52" y="61" text-anchor="middle" fill="'+CRM+'" style="font-family: \'Cormorant Garamond\', serif; font-style: italic; font-weight: 700; font-size: 24px">2027</text></svg></div>')
 BTN='display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none'
 ITEMS=['DJ en vivo','Estación de buffet','Trago de bienvenida','Ambiente familiar y festivo','Open bar de cervezas y bebidas sin alcohol']

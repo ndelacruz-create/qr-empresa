@@ -73,8 +73,8 @@ card=('<sc-if value="{{showNoche}}" hint-placeholder-val="{{true}}">\n'
 '<p style="margin: 10px 0 0; font-family: \'Cormorant Garamond\', serif; font-style: italic; font-size: 20px; line-height: 25px; color: '+INK+'">Para celebrar en familia la noche del 24.</p>\n'
 '<ul style="margin: 16px 0 0; padding: 14px 0 0; border-top: 2px dotted '+GREEN+'; list-style: none; display: flex; flex-direction: column; gap: 5px; font-family: \'Cormorant Garamond\', serif; font-size: 19px; line-height: 24px; color: '+INK+'">'
 +LI(GREEN,'<circle cx="6" cy="6" r="5"/>','Buffet navideño')+LI(RED,'<path d="M6 0l6 6-6 6-6-6z"/>','DJs')+LI(GOLD,'<path d="M6 0l1.8 3.9 4.2.5-3.1 2.9.8 4.2L6 9.4 2.3 11.5l.8-4.2L0 4.4l4.2-.5z"/>','Vino por mesa')+'</ul>\n'
-'<div style="margin-top: 16px; padding: 12px 14px; background: #EEF0E4; display: flex; flex-direction: column; gap: 4px">'+PRICE('Adultos','US$75 + imp.')+PRICE('Niños','US$45 + imp.')+
-'<div style="margin-top: 4px; font-size: 12px; line-height: 17px; color: #46524A">Precios + 28% de impuestos.</div></div>\n'
+'<div style="margin-top: 16px; padding: 12px 14px; background: #EEF0E4; display: flex; flex-direction: column; gap: 4px">'+PRICE('Adultos','US$75 + imp.')+PRICE('Niños 6 a 15','US$45 + imp.')+
+'<div style="margin-top: 4px; font-size: 12px; line-height: 17px; color: #46524A">Precios + 28% de impuestos. Infantes de 0 a 6 años, gratis.</div></div>\n'
 '<a href="https://wa.link/hwnaf7" target="_blank" rel="noopener noreferrer" style="margin-top: 18px; min-height: 52px; background: '+RED+'; color: '+CREAM+'; font-size: 12px; '+BTN+'">Escríbenos para asistir</a>\n'
 '<a href="'+CAL+'" target="_blank" rel="noopener noreferrer" style="margin-top: 10px; min-height: 44px; border: 1px solid '+INK+'; color: '+INK+'; font-size: 11px; '+BTN+'">Guárdalo en tu calendario</a>\n'
 +SLEIGH+'</div>\n'+STRIP.replace('"></div>','; transform: scaleY(-1)"></div>')+'\n</article>\n</sc-if>')
