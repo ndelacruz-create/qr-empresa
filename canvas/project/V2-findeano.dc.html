@@ -132,7 +132,7 @@ nav[aria-label="Ir a una sección"] a:active{transform:translateY(2px);box-shado
 <div style="padding: 2px 2px 22px; display: flex; flex-direction: column; gap: 14px; animation: acRise 0.5s ease-out both">
 <ul style="margin: 0; padding: 0; list-style: none; font-family: 'Cormorant Garamond', serif; font-size: 19px; line-height: 25px; display: flex; flex-direction: column; gap: 6px"><sc-for list="{{t.items}}" as="it" hint-placeholder-count="5"><li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: var(--ac-dark-beige); font-size: 11px; line-height: 25px">✦</span><span>{{it}}</span></li></sc-for></ul>
 <div style="font-size: 13px; line-height: 19px; color: var(--text-secondary)">Precios + 28% de impuestos. Niños {{t.kids}} + imp. Desde los 12 años, tarifa de adulto.</div>
-<div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; line-height: 24px; color: var(--ac-near-black)">Sin reserva: acércate al lobby cuando quieras.</div>
+<div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; line-height: 24px; color: var(--ac-near-black)">Sin reserva: acércate a recepción cuando quieras.</div>
 </div>
 </sc-if>
 </div>
@@ -383,10 +383,10 @@ var zonasData = [
   { label: 'Pádel', text: '7 pistas' },
   { label: 'Además', text: 'Zona fitness · Wellness' } ] },
  { id: 'smart', name: 'Smart Fit', detail: 'frente a Downtown', kind: 'Gimnasio en el edificio del Supermercado Bravo' } ] },
-{ id: 'playas', label: 'Playas', title: 'Playas más cercanas', items: [
- { id: 'bibi', name: 'Playa Bibijagua', detail: '5.1 km', kind: 'Playa de Bávaro con restaurantes y mercado' },
- { id: 'bav', name: 'Playa Bávaro', detail: '5.5 km', kind: 'La playa más conocida de la zona' },
- { id: 'cor', name: 'Playa Los Corales', detail: '7.1 km', kind: 'Playa con bares y restaurantes frente al mar' } ] }
+{ id: 'playas', label: 'Playas', title: 'Playas cercanas', items: [
+ { id: 'bibi', name: 'Playa Bibijagua', detail: 'En carro', kind: 'Playa de Bávaro con restaurantes y mercado' },
+ { id: 'bav', name: 'Playa Bávaro', detail: 'En carro', kind: 'La playa más conocida de la zona' },
+ { id: 'cor', name: 'Playa Los Corales', detail: 'En carro', kind: 'Playa con bares y restaurantes frente al mar' } ] }
 ];
 var zonaTabs = zonasData.map(function (z) {
 var on = z.id === zid;
