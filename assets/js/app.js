@@ -29,7 +29,6 @@
   function $all(sel, root) { return Array.prototype.slice.call(root.querySelectorAll(sel)); }
 
   var agendaAll = [
-    { f: '2026-11-21', name: 'Feria Artesanal', href: 'temporada', feria: true },
     { f: '2026-11-26', name: 'Cena de Thanksgiving', href: 'temporada' },
     { f: '2026-12-24', name: 'Cena de Nochebuena', href: 'temporada' },
     { f: '2026-12-27', name: 'San Silvestre del Caribe', href: 'comunidad' },
@@ -68,7 +67,7 @@
       var nx = agendaAll[0];
       link.setAttribute('href', '#' + pfx + nx.href);
       var w = link.querySelector('[data-agenda="when"]'); if (w) w.textContent = fecha(nx.f);
-      if (!nx.feria) {
+      if (nx.name !== link.getAttribute('data-fest-name')) {
         var n1 = link.querySelector('[data-agenda="name1"]'); if (n1) n1.textContent = nx.name;
         var n2 = link.querySelector('[data-agenda="name2"]'); if (n2) n2.textContent = '';
         $all('[data-feria]', link).forEach(function (f) { f.style.display = 'none'; });
